@@ -1,0 +1,206 @@
+
+$leftPartBgColor: black;
+$rightPartBgColor: white;
+
+$superColor: linear-gradient(to right, $leftPartBgColor 50%, $rightPartBgColor 50%);
+$superColorReverse: linear-gradient(to right, $rightPartBgColor 50%, $leftPartBgColor 50%);
+
+$eyeWidth: 60vw;
+
+.StartScreen {
+  display: flex;
+  flex-direction: column;
+  background: $superColor;
+  height: 100vh;
+
+  .eye {
+
+    width: $eyeWidth;
+    height: calc($eyeWidth / 1.2);
+    margin-left: 50vw - calc($eyeWidth / 2);
+    border-radius: 100px 100px 100px 100px;
+    background: white;
+
+    position: relative;
+
+    margin-top: 5vh;
+
+    display: flex;
+  }
+
+  .eye_left {
+    border-top: calc($eyeWidth / 10) $rightPartBgColor solid;
+    border-bottom: calc($eyeWidth / 10) $rightPartBgColor solid;
+    border-left: calc($eyeWidth / 10) $rightPartBgColor solid;
+
+    border-radius: 100px 0 0 100px;
+    width: 50%;
+    box-sizing: border-box;
+
+    background: black;
+    position: relative;
+
+    overflow: hidden
+  }
+
+  .eye_right {
+    border-top: calc($eyeWidth / 10) $leftPartBgColor solid;
+    border-bottom: calc($eyeWidth / 10) $leftPartBgColor solid;
+    border-right: calc($eyeWidth / 10) $leftPartBgColor solid;
+
+    width: 50%;
+    border-radius: 0% 100px 100px 0;
+    box-sizing: border-box;
+
+    position: relative;
+    overflow: hidden
+  }
+
+  @mixin eyeEntry($bgColor) {
+    border-radius: 100%;
+    width: calc($eyeWidth / 5);
+    height: calc($eyeWidth / 5);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $bgColor;
+  }
+
+  @mixin eyeEntryDiv($bgColor) {
+    position: relative;
+    background: $leftPartBgColor;
+    width: calc($eyeWidth / 10);
+    height: calc($eyeWidth / 10);
+    border-radius: 100%;
+    background: $bgColor;
+  }
+
+  .eye_entry {
+    @include eyeEntry($rightPartBgColor);
+  }
+
+  .eye_entry_r {
+    @include eyeEntry($leftPartBgColor);
+    left: auto;
+  }
+
+  .eye_entry div {
+    @include eyeEntryDiv($leftPartBgColor);
+  }
+
+  .eye_entry_r div {
+    @include eyeEntryDiv($rightPartBgColor);
+  }
+
+  .titleContainer {
+    display: flex;
+    flex-direction: row;
+    font-family: Undertale, serif;
+    font-size: 4vw;
+
+    margin-top: 40vh;
+  }
+
+  .titleContainer__column {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 50vw;
+
+    align-items: center;
+  }
+
+  .titleText {
+    position: relative;
+  }
+
+  .titleText.first {
+
+    background: black;
+    color: white;
+
+    padding-left: .5vw;
+  }
+
+  .titleText.second {
+
+    background: white;
+    color: black;
+
+    margin-top: 5vh;
+    padding: 1vw;
+
+    transform: rotate(-6deg);
+  }
+
+  .titleText.third {
+
+    background: black;
+    color: white;
+
+    padding: 1vw;
+
+    transform: rotate(-6deg);
+  }
+
+  .titleText.fourth {
+    background: white;
+
+    margin-top: 5vh;
+    padding-left: .5vw;
+  }
+
+  %bgCloser {
+
+    position: absolute;
+
+    top: 0;
+    height: 100%;
+    background: inherit;
+    width: 100%;
+
+    animation: .75s ease-out bgCloserAnimClose;
+    animation-fill-mode: forwards;
+  }
+
+  .bg_closer__left {
+
+    @extend %bgCloser;
+    left: 0;
+  }
+
+  .bg_closer__right {
+
+    @extend %bgCloser;
+    right: 0;
+  }
+
+  .first .bg_closer__right, .first .bg_closer__left {
+    animation-delay: 0s;
+  }
+  .second .bg_closer__right, .second .bg_closer__left {
+    animation-delay: 1.5s;
+  }
+  .third .bg_closer__right, .third .bg_closer__left {
+    animation-delay: .75s;
+  }
+  .fourth .bg_closer__right, .fourth .bg_closer__left {
+    animation-delay: 2.25s;
+  }
+
+  @keyframes bgCloserAnimClose {
+    from {
+      width: 100%;
+    }
+    to {
+      width: 0;
+    }
+  }
+
+  @media all and (orientation: landscape) {
+
+  }
+}
