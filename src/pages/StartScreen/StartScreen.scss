@@ -1,107 +1,139 @@
 
-$leftPartBgColor: black;
-$rightPartBgColor: white;
+$leftDarkPartBgColor: black;
+$rightBrightPartBgColor: pink;
 
-$superColor: linear-gradient(to right, $leftPartBgColor 50%, $rightPartBgColor 50%);
-$superColorReverse: linear-gradient(to right, $rightPartBgColor 50%, $leftPartBgColor 50%);
+$superColor: linear-gradient(to right, $leftDarkPartBgColor 50%, $rightBrightPartBgColor 50%);
+$superColorEye: linear-gradient(to right top, $rightBrightPartBgColor 50%, $leftDarkPartBgColor 50%);
+$superColorEyeReverse: linear-gradient(to right top, $leftDarkPartBgColor 50%, $rightBrightPartBgColor 50%);
+$superColorReverse: linear-gradient(to right, $rightBrightPartBgColor 50%, $leftDarkPartBgColor 50%);
+
+$titleMarginTop: 40vh;
 
 $eyeWidth: 60vw;
+$eyeBorderWidth: 5vw;
+$eyeMarginTop: 5vh;
+$titleFontSize: 4vw;
+$titleRotate: -6deg;
+$titleMarginBetweenText: 5vh;
+$titleWidth: 100%;
+
+$eyeWidthPC: 35vh;
+$eyeBorderWidthPC: 3vh;
+$eyeMarginTopPC: 5vh;
+$titleFontSizePC: 3vh;
+$titleMarginBetweenTextPC: 10vh;
+$titleMarginTopPC: 25vh;
+$titleWidthPC: 100vh;
+
 
 .StartScreen {
   display: flex;
   flex-direction: column;
   background: $superColor;
   height: 100vh;
+  align-items: center;
+  position: relative;
 
   .eye {
-
     width: $eyeWidth;
-    height: calc($eyeWidth / 1.2);
-    margin-left: 50vw - calc($eyeWidth / 2);
-    border-radius: 100px 100px 100px 100px;
-    background: white;
-
-    position: relative;
-
-    margin-top: 5vh;
-
+    height: $eyeWidth;
+    border-radius: 70% 0 / 70%;
+    transform: rotate(45deg);
+    background: $superColorEye;
+    margin-top: $eyeMarginTop;
     display: flex;
+    position: relative;
+    z-index: 2;
+
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      z-index: -1;
+      margin: $eyeBorderWidth;
+      border-radius: inherit;
+      background: $superColorEyeReverse;
+    }
   }
 
-  .eye_left {
-    border-top: calc($eyeWidth / 10) $rightPartBgColor solid;
-    border-bottom: calc($eyeWidth / 10) $rightPartBgColor solid;
-    border-left: calc($eyeWidth / 10) $rightPartBgColor solid;
-
-    border-radius: 100px 0 0 100px;
-    width: 50%;
-    box-sizing: border-box;
-
-    background: black;
-    position: relative;
-
-    overflow: hidden
+  .eye_entity {
+    position: absolute;
+    width: $eyeWidth * 1.45;
+    height: $eyeWidth;
+    margin-top: $eyeMarginTop;
+    display: flex;
+    z-index: 3;
   }
 
-  .eye_right {
-    border-top: calc($eyeWidth / 10) $leftPartBgColor solid;
-    border-bottom: calc($eyeWidth / 10) $leftPartBgColor solid;
-    border-right: calc($eyeWidth / 10) $leftPartBgColor solid;
-
+  .eye_entity__container {
     width: 50%;
-    border-radius: 0% 100px 100px 0;
-    box-sizing: border-box;
-
+    height: 100%;
+    overflow: hidden;
     position: relative;
-    overflow: hidden
   }
 
   @mixin eyeEntry($bgColor) {
     border-radius: 100%;
-    width: calc($eyeWidth / 5);
-    height: calc($eyeWidth / 5);
+
     position: absolute;
-    left: 50%;
     top: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     background: $bgColor;
+
+    transition: left 1s, top 1s, right 1s;
+
+    width: calc($eyeWidth / 4);
+    height: calc($eyeWidth / 4);
+    left: calc($eyeWidth * 1.45 / 2) - calc($eyeWidth / 10);
+
+    @media all and (orientation: landscape) {
+      width: calc($eyeWidthPC / 4);
+      height: calc($eyeWidthPC / 4);
+    }
   }
 
   @mixin eyeEntryDiv($bgColor) {
     position: relative;
-    background: $leftPartBgColor;
-    width: calc($eyeWidth / 10);
-    height: calc($eyeWidth / 10);
+    background: $leftDarkPartBgColor;
     border-radius: 100%;
     background: $bgColor;
+    width: calc($eyeWidth / 8);
+    height: calc($eyeWidth / 8);
+
+    @media all and (orientation: landscape) {
+      width: calc($eyeWidthPC / 8);
+      height: calc($eyeWidthPC / 8);
+    }
   }
 
   .eye_entry {
-    @include eyeEntry($rightPartBgColor);
+    @include eyeEntry($rightBrightPartBgColor);
   }
 
   .eye_entry_r {
-    @include eyeEntry($leftPartBgColor);
+    @include eyeEntry($leftDarkPartBgColor);
     left: auto;
   }
 
   .eye_entry div {
-    @include eyeEntryDiv($leftPartBgColor);
+    @include eyeEntryDiv($leftDarkPartBgColor);
   }
 
   .eye_entry_r div {
-    @include eyeEntryDiv($rightPartBgColor);
+    @include eyeEntryDiv($rightBrightPartBgColor);
   }
 
   .titleContainer {
     display: flex;
     flex-direction: row;
     font-family: Undertale, serif;
-    font-size: 4vw;
+    font-size: $titleFontSize;
 
-    margin-top: 40vh;
+    margin-top: $titleMarginTop;
+    width: $titleWidth;
   }
 
   .titleContainer__column {
@@ -119,37 +151,37 @@ $eyeWidth: 60vw;
 
   .titleText.first {
 
-    background: black;
-    color: white;
+    background: $leftDarkPartBgColor;
+    color: $rightBrightPartBgColor;
 
     padding-left: .5vw;
   }
 
   .titleText.second {
 
-    background: white;
-    color: black;
+    background: $rightBrightPartBgColor;
+    color: $leftDarkPartBgColor;
 
-    margin-top: 5vh;
+    margin-top: $titleMarginBetweenText;
     padding: 1vw;
 
-    transform: rotate(-6deg);
+    transform: rotate($titleRotate);
   }
 
   .titleText.third {
 
-    background: black;
-    color: white;
+    background: $leftDarkPartBgColor;
+    color: $rightBrightPartBgColor;
 
     padding: 1vw;
 
-    transform: rotate(-6deg);
+    transform: rotate($titleRotate);
   }
 
   .titleText.fourth {
-    background: white;
+    background: $rightBrightPartBgColor;
 
-    margin-top: 5vh;
+    margin-top: $titleMarginBetweenText;
     padding-left: .5vw;
   }
 
@@ -202,5 +234,32 @@ $eyeWidth: 60vw;
 
   @media all and (orientation: landscape) {
 
+    .eye {
+      width: $eyeWidthPC;
+      height: $eyeWidthPC;
+
+      &:before {
+        margin: $eyeBorderWidthPC;
+      }
+    }
+
+    .eye_entity {
+      position: absolute;
+      width: $eyeWidthPC * 1.45;
+      height: $eyeWidthPC;
+      margin-top: $eyeMarginTopPC;
+      display: flex;
+      z-index: 3;
+    }
+
+    .titleContainer {
+      display: flex;
+      flex-direction: row;
+      font-family: Undertale, serif;
+      font-size: $titleFontSizePC;
+
+      margin-top: $titleMarginTopPC;
+      width: $titleWidthPC;
+    }
   }
 }

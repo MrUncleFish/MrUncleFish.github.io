@@ -3,19 +3,38 @@ import {useEffect, useState} from "react";
 
 function StartScreen() {
 
-    const [eyeCoord, setEyeCoord] = useState([80, 25]);
+    const [eyeCoord, setEyeCoord] = useState(0);
 
     // top 12%-64%
     // left 12%-69%
-    // 88 - 120
+    // 88 - 120 82.5, 65,
 
-    const step = 1;
+    const coordList = [
+        [82.5, 65],
+        [40, 40],
+        [60, 20],
+        [55, 40],
+        [55, 55],
+        [110, 50],
+        [130, 37.5],
+        [110, 20],
+        [110, 40],
+        [82.5, 20],
+        [82.5, 40],
+    ];
 
     useEffect(() => {
 
         setTimeout(() => {
-             setEyeCoord([getXCoord(eyeCoord[0], eyeCoord[1]), getYCoord(eyeCoord[0], eyeCoord[1])]);
-        }, 10);
+
+            let newCoord = eyeCoord;
+            while (newCoord === eyeCoord) {
+                newCoord = generateRandomIntegerInRange(1, coordList.length-1)
+            }
+
+             setEyeCoord(newCoord);
+
+        }, eyeCoord === 0 ? 3000 : 1000);
 
     }, [eyeCoord]);
 
@@ -23,38 +42,20 @@ function StartScreen() {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-    const getXCoord = (currentXCoord: number, currentYCoord: number) => {
-
-        if (currentXCoord > 68) return currentXCoord - step;
-        if (currentXCoord < 13) return currentXCoord + step;
-
-        if (currentXCoord + currentYCoord > 119) return currentXCoord - step;
-        if (currentXCoord + currentYCoord < 89) return currentXCoord + step;
-
-        return generateRandomIntegerInRange(0, 1) === 0 ? currentXCoord - step : currentXCoord + step;
-    }
-
-    const getYCoord = (currentXCoord: number, currentYCoord: number) => {
-
-        if (currentYCoord > 68) return currentYCoord - step;
-        if (currentYCoord < 13) return currentYCoord + step;
-
-        if (currentXCoord + currentYCoord > 119) return currentYCoord - step;
-        if (currentXCoord + currentYCoord < 89) return currentYCoord + step;
-
-        return generateRandomIntegerInRange(0, 1) === 0 ? currentYCoord - step : currentYCoord + step;
-    }
 
     return (
+
         <div className="StartScreen">
             <div className="eye">
-                <div className="eye_left">
-                    <div className="eye_entry" style={{top: eyeCoord[1] + '%', left: eyeCoord[0] + '%'}}>
+            </div>
+            <div className="eye_entity">
+                <div className="eye_entity__container">
+                    <div className="eye_entry" style={{top: coordList[eyeCoord][1] + '%', left: coordList[eyeCoord][0] + '%'}}>
                         <div/>
                     </div>
                 </div>
-                <div className="eye_right">
-                    <div className="eye_entry_r" style={{top: eyeCoord[1] + '%', right: 150 - eyeCoord[0] + '%'}}>
+                <div className="eye_entity__container">
+                    <div className="eye_entry_r" style={{top: coordList[eyeCoord][1] + '%', right: 165 - coordList[eyeCoord][0] + '%'}}>
                         <div/>
                     </div>
                 </div>
