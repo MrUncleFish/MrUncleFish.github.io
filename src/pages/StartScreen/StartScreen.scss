@@ -7,10 +7,10 @@ $superColorEye: linear-gradient(to right top, $rightBrightPartBgColor 50%, $left
 $superColorEyeReverse: linear-gradient(to right top, $leftDarkPartBgColor 50%, $rightBrightPartBgColor 50%);
 $superColorReverse: linear-gradient(to right, $rightBrightPartBgColor 50%, $leftDarkPartBgColor 50%);
 
-$titleMarginTop: 40vh;
+$titleMarginTop: 48vh;
 
-$eyeWidth: 60vw;
-$eyeBorderWidth: 5vw;
+$eyeWidth: 45vw;
+$eyeBorderWidth: .4vh;
 $eyeMarginTop: 5vh;
 $titleFontSize: 4vw;
 $titleRotate: -6deg;
@@ -18,13 +18,13 @@ $titleMarginBetweenText: 5vh;
 $titleWidth: 100%;
 
 $eyeWidthPC: 35vh;
-$eyeBorderWidthPC: 3vh;
 $eyeMarginTopPC: 5vh;
 $titleFontSizePC: 3vh;
 $titleMarginBetweenTextPC: 10vh;
-$titleMarginTopPC: 25vh;
+$titleMarginTopPC: 30vh;
 $titleWidthPC: 100vh;
 
+$animationBlurStart: 2s;
 
 .StartScreen {
   display: flex;
@@ -34,26 +34,28 @@ $titleWidthPC: 100vh;
   align-items: center;
   position: relative;
 
-  .eye {
-    width: $eyeWidth;
-    height: $eyeWidth;
-    border-radius: 70% 0 / 70%;
-    transform: rotate(45deg);
-    background: $superColorEye;
-    margin-top: $eyeMarginTop;
-    display: flex;
-    position: relative;
-    z-index: 2;
+  .StartScreen__fon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
+    background: black;
 
+    opacity: 1;
 
-    &:before {
-      content: '';
-      position: absolute;
-      top: 0; right: 0; bottom: 0; left: 0;
-      z-index: -1;
-      margin: $eyeBorderWidth;
-      border-radius: inherit;
-      background: $superColorEyeReverse;
+    animation: $animationBlurStart ease-out bgBlurHide;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes bgBlurHide {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+      display: none;
     }
   }
 
@@ -72,6 +74,37 @@ $titleWidthPC: 100vh;
     overflow: hidden;
     position: relative;
   }
+
+  .eye_svg {
+    margin-top: $eyeMarginTop;
+    width: 100vw;
+    height: $eyeWidth;
+  }
+
+  .eye_form {
+    fill: url(#Gradient1);
+    stroke: url(#Gradient2);
+    stroke-width: $eyeBorderWidth;
+    width: 100%;
+    height: 100%;
+  }
+
+  .g1-stop1 {
+    stop-color: $leftDarkPartBgColor;
+  }
+
+  .g1-stop2 {
+    stop-color: $rightBrightPartBgColor;
+  }
+
+  .g2-stop1 {
+    stop-color: $rightBrightPartBgColor;
+  }
+
+  .g2-stop2 {
+    stop-color: $leftDarkPartBgColor;
+  }
+
 
   @mixin eyeEntry($bgColor) {
     border-radius: 100%;
@@ -211,16 +244,16 @@ $titleWidthPC: 100vh;
   }
 
   .first .bg_closer__right, .first .bg_closer__left {
-    animation-delay: 0s;
+    animation-delay: $animationBlurStart - 0.5s;
   }
   .second .bg_closer__right, .second .bg_closer__left {
-    animation-delay: 1.5s;
+    animation-delay: $animationBlurStart + 1s;
   }
   .third .bg_closer__right, .third .bg_closer__left {
-    animation-delay: .75s;
+    animation-delay: $animationBlurStart + 0.25s;
   }
   .fourth .bg_closer__right, .fourth .bg_closer__left {
-    animation-delay: 2.25s;
+    animation-delay: $animationBlurStart + 1.75s;
   }
 
   @keyframes bgCloserAnimClose {
@@ -234,13 +267,10 @@ $titleWidthPC: 100vh;
 
   @media all and (orientation: landscape) {
 
-    .eye {
-      width: $eyeWidthPC;
+    .eye_svg {
+      margin-top: $eyeMarginTopPC;
+      width: 100vw;
       height: $eyeWidthPC;
-
-      &:before {
-        margin: $eyeBorderWidthPC;
-      }
     }
 
     .eye_entity {

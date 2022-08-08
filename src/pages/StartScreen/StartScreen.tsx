@@ -34,7 +34,7 @@ function StartScreen() {
 
              setEyeCoord(newCoord);
 
-        }, eyeCoord === 0 ? 3000 : 1000);
+        }, eyeCoord === 0 ? 4500 : 1000);
 
     }, [eyeCoord]);
 
@@ -46,8 +46,22 @@ function StartScreen() {
     return (
 
         <div className="StartScreen">
-            <div className="eye">
-            </div>
+
+            <div className="StartScreen__fon"/>
+
+            <svg className="eye_svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 33 50 34">
+                <linearGradient id="Gradient1">
+                    <stop className="g1-stop1" offset="50%"/>
+                    <stop className="g1-stop2" offset="50%"/>
+                </linearGradient>
+                <linearGradient id="Gradient2">
+                    <stop className="g2-stop1" offset="50%"/>
+                    <stop className="g2-stop2" offset="50%"/>
+                </linearGradient>
+                <path className="eye_form" d="M 50 50 C 35 70 15 70 0 50 C 15 30 35 30 50 50 z"/>
+            </svg>
+
+            {/*<div className="eye"/>*/}
             <div className="eye_entity">
                 <div className="eye_entity__container">
                     <div className="eye_entry" style={{top: coordList[eyeCoord][1] + '%', left: coordList[eyeCoord][0] + '%'}}>

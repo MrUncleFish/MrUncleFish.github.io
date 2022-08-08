@@ -1,0 +1,12 @@
+body::-webkit-scrollbar {
+  width: 0;
+}
+
+.BodyPage {
+  overflow: hidden;
+  position: absolute;
+  top: -0%;
+  touch-action: none;
+
+  transition: top 1s;
+}
