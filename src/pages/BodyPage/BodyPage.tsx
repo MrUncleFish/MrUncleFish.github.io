@@ -7,9 +7,6 @@ function BodyPage() {
 
     const pages = [
         <StartScreen/>,
-        <StartScreen/>,
-        <StartScreen/>,
-        <StartScreen/>,
         <SecondScreen/>
     ];
     const [page, setPage] = useState(0);
