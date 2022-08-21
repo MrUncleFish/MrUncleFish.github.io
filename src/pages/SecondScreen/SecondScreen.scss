@@ -1,7 +1,111 @@
-
+$mainThemeColor: white;
+$bgColor: #FFD700;
 
 .SecondScreen {
-  background: gray;
+  background: $bgColor;
   height: 100vh;
   width: 100vw;
+  color: $mainThemeColor;
+  font-family: KTFJermilovSolid;
+
+  .top_space {
+    width: 100vw;
+    height: 5vw;
+  }
+
+  .header {
+    margin-left: 5vw;
+    font-size: 7vw;
+    font-weight: bold;
+  }
+
+
+  .header_text {
+    margin: 0 5vw;
+    font-size: 1.8vw;
+  }
+
+  .row {
+    display: flex;
+  }
+
+  @keyframes logoListSpin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes logoItemSpin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+
+  .logo_container {
+    width: 30vw;
+    height: 30vw;
+    position: relative;
+    margin-left: 10vw;
+
+    animation: logoListSpin linear 7.5s infinite;
+  }
+
+  .logo_container img {
+    width: 5vw;
+    height: 5vw;
+    position: absolute;
+
+    animation: logoItemSpin linear 7.5s infinite;
+  }
+
+  @mixin coordinates($x, $y) {
+    bottom: $y;
+    left: $x;
+  }
+
+  .csharp_logo {
+    @include coordinates(40%, 13%);
+  }
+
+  .sass_logo {
+    width: 10vw!important;
+    @include coordinates(55%, 25%);
+  }
+
+  .css_logo {
+    @include coordinates(74%, 50%);
+  }
+
+  .react_logo {
+    width: 6vw!important;
+    @include coordinates(54%, 70%);
+  }
+
+  .html_logo {
+    @include coordinates(26%, 70%);
+  }
+
+  .js_logo {
+    width: 4.5vw!important;
+    @include coordinates(9%, 47%);
+
+  }
+
+  .php_logo {
+    @include coordinates(13%, 21%);
+    width: 7vw!important;
+    height: 7vw!important;
+  }
+
+  .header_text span {
+    color: $bgColor;
+    background: $mainThemeColor;
+    padding: 0vw .5vw;
+  }
+
 }

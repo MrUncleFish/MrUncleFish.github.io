@@ -5,12 +5,12 @@ import SecondScreen from "../SecondScreen/SecondScreen";
 
 function BodyPage() {
 
-    const pages = [
-        <StartScreen/>,
-        <SecondScreen/>
-    ];
     const [page, setPage] = useState(0);
     const [blockChangePage, setBlockChangePage] = useState(false);
+    const pages = [
+        <StartScreen/>,
+        <SecondScreen isActive={page === 1}/>
+    ];
 
     const tryToChangePage = (pageNumber: number) => {
 
