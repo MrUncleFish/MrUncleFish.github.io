@@ -1,0 +1,16 @@
+.mov_header {
+  margin-left: 5vw;
+  font-size: 7vw;
+  font-weight: bold;
+  height: 10vw;
+}
+
+.mov_header span {
+  position: relative;
+  transition: top 0.1s, color .5s;
+  cursor: pointer;
+}
+
+.mov_header span:hover {
+  color: black;
+}

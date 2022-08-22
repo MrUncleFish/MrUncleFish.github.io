@@ -13,13 +13,6 @@ $bgColor: #FFD700;
     height: 5vw;
   }
 
-  .header {
-    margin-left: 5vw;
-    font-size: 7vw;
-    font-weight: bold;
-  }
-
-
   .header_text {
     margin: 0 5vw;
     font-size: 1.8vw;
@@ -105,7 +98,14 @@ $bgColor: #FFD700;
   .header_text span {
     color: $bgColor;
     background: $mainThemeColor;
-    padding: 0vw .5vw;
+    padding: 0 .5vw;
+  }
+
+  .header_text span:hover {
+    color: $mainThemeColor;
+    background: black;
+    transition: background 0.5s, color .5s;
+    cursor: pointer;
   }
 
 }

@@ -2,6 +2,8 @@ import './BodyPage.scss'
 import StartScreen from "../StartScreen/StartScreen";
 import React, {useEffect, useState} from "react";
 import SecondScreen from "../SecondScreen/SecondScreen";
+import ThirdScreen from "../ThirdScreen/ThirdScreen";
+import ScrollHandler from "../../components/ScrollHandler/ScrollHandler";
 
 function BodyPage() {
 
@@ -9,35 +11,9 @@ function BodyPage() {
     const [blockChangePage, setBlockChangePage] = useState(false);
     const pages = [
         <StartScreen/>,
-        <SecondScreen isActive={page === 1}/>
+        <SecondScreen isActive={page === 1}/>,
+        <ThirdScreen isActive={page === 2}/>
     ];
-
-    const tryToChangePage = (pageNumber: number) => {
-
-        if (pageNumber > 0) {
-            if (!blockChangePage && pages.length - 1 !== page) {
-                setPage(page + 1);
-                setBlockChangePage(true);
-            }
-        }
-
-        if (pageNumber < 0) {
-            if (!blockChangePage) {
-                setPage(page - 1);
-                setBlockChangePage(true);
-            }
-        }
-    }
-
-    useEffect(() => {
-        window.addEventListener('mousewheel', (e) => e.preventDefault(), {passive: false});
-        window.addEventListener('keydown', (e) => e.preventDefault(), {passive: false});
-
-        return () => {
-            window.removeEventListener('mousewheel', (e) => e.preventDefault())
-            window.removeEventListener('keydown', (e) => e.preventDefault())
-        }
-    }, []);
 
     useEffect(() => {
         if (blockChangePage) setTimeout(() => setBlockChangePage(false), 250);
@@ -46,11 +22,8 @@ function BodyPage() {
     const wheelHandler = (e: React.WheelEvent) => {
 
         window.scrollTo(0, 0);
-        if (e.deltaY > 0) {
-            tryToChangePage(1);
-        } else {
-            tryToChangePage(-1);
-        }
+        if (e.deltaY > 0) tryToChangePage(1);
+        else tryToChangePage(-1);
     }
 
     const keyPressHandler = (e: React.KeyboardEvent) => {
@@ -58,8 +31,20 @@ function BodyPage() {
         if (e.key === "ArrowUp") tryToChangePage(-1);
     }
 
+    const tryToChangePage = (pageNumber: number) => {
+        if (pageNumber > 0 && !blockChangePage && pages.length - 1 !== page) changePage(page + 1);
+        if (pageNumber < 0 && !blockChangePage) changePage(page - 1);
+    }
+
+    const changePage = (pageNumber: number) => {
+            setPage(pageNumber);
+            setBlockChangePage(true);
+    }
+
     return (
-        <div onKeyDown={keyPressHandler} tabIndex={0} onKeyUp={keyPressHandler} onWheel={wheelHandler} className="BodyPage" style={{top: '-' + (page * 100) + '%'}}>
+        <div onKeyDown={keyPressHandler} tabIndex={0} onKeyUp={keyPressHandler} onWheel={wheelHandler}
+             className="BodyPage" style={{top: '-' + (page * 100) + '%'}}>
+            <ScrollHandler/>
             {pages.map((e, id) => <div key={id}>{e}</div>)}
         </div>
     )
