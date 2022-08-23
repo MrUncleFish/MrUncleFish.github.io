@@ -1,4 +1,4 @@
-import './SecondScreen.scss'
+import './AboutScreen.scss'
 import SkillContainer from "../../components/SkillContainer/SkillContainer";
 
 import csharp_logo from "../../assets/img/csharp_logo.png";
@@ -11,11 +11,11 @@ import php_logo from "../../assets/img/php_logo.png";
 import React from "react";
 import MovingTitle from "../../components/MovingTitle/MovingTitle";
 
-interface SecondScreenProps {
+interface AboutScreenProps {
     isActive: boolean;
 }
 
-function SecondScreen({isActive} : SecondScreenProps) {
+function AboutScreen({isActive} : AboutScreenProps) {
 
     // html css sass js reactjs php c# ts огу образование
     return (
@@ -59,4 +59,4 @@ function SecondScreen({isActive} : SecondScreenProps) {
     )
 }
 
-export default SecondScreen
+export default AboutScreen

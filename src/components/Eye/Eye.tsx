@@ -1,5 +1,6 @@
 import React, {FC, Fragment, useEffect, useState} from "react";
 import './Eye.scss';
+import {generateRandomIntegerInRange} from "../../functions/math";
 
 interface EyeProps {
 }
@@ -37,9 +38,7 @@ const Eye: FC<EyeProps> = () => {
 
     }, [eyeCoord]);
 
-    function generateRandomIntegerInRange(min: number, max: number): number {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
+
 
     return (
         <Fragment>

@@ -99,12 +99,12 @@ $bgColor: #FFD700;
     color: $bgColor;
     background: $mainThemeColor;
     padding: 0 .5vw;
+    transition: background 0.5s, color .5s;
   }
 
   .header_text span:hover {
     color: $mainThemeColor;
     background: black;
-    transition: background 0.5s, color .5s;
     cursor: pointer;
   }
 

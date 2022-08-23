@@ -1,9 +1,10 @@
 import './BodyPage.scss'
 import StartScreen from "../StartScreen/StartScreen";
 import React, {useEffect, useState} from "react";
-import SecondScreen from "../SecondScreen/SecondScreen";
-import ThirdScreen from "../ThirdScreen/ThirdScreen";
+import AboutScreen from "../AboutScreen/AboutScreen";
+import MatrixScreen from "../MatrixScreen/MatrixScreen";
 import ScrollHandler from "../../components/ScrollHandler/ScrollHandler";
+import StatsScreen from "../StatsScreen/StatsScreen";
 
 function BodyPage() {
 
@@ -11,8 +12,9 @@ function BodyPage() {
     const [blockChangePage, setBlockChangePage] = useState(false);
     const pages = [
         <StartScreen/>,
-        <SecondScreen isActive={page === 1}/>,
-        <ThirdScreen isActive={page === 2}/>
+        <AboutScreen isActive={page === 1}/>,
+        <MatrixScreen isActive={page === 2}/>,
+        <StatsScreen isActive={page === 3}/>
     ];
 
     useEffect(() => {

@@ -1,0 +1,44 @@
+$bgColor: #cb8b16;
+$bgColorStats: rgb(248, 167, 5);
+$bgColorBlocks: rgb(255, 136, 0);
+$mainColor: white;
+
+$paddingBody: 2.5vw;
+
+.StatsScreen {
+  display: flex;
+  flex-direction: column;
+  background: $bgColor;
+  height: 100vh;
+  align-items: center;
+  position: relative;
+
+  .StatsContainer {
+    border: .5vw $mainColor solid;
+    border-radius: 3px;
+    box-sizing: border-box;
+    width: 100vw - ($paddingBody * 2);
+    height: calc(100vh - ($paddingBody * 2));
+    margin: $paddingBody;
+    display: flex;
+    background: $bgColorStats;
+  }
+
+  .FloatContainer {
+    height: 100%;
+    width: 80%;
+    background: $bgColorBlocks;
+    position: relative;
+  }
+
+  .HeroContainer {
+    height: 100%;
+    width: 20%;
+  }
+
+  .FloatContainer_block {
+    background: green;
+    position: absolute;
+    transition: top .2s, right .2s, bottom .2s, left .2s;
+  }
+}
