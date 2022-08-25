@@ -1,0 +1,52 @@
+@import "../../pages/StatsScreen/StatsScreen";
+
+.FloatContainer {
+  height: 100%;
+  width: 80%;
+  background: $bgColorBlocks;
+  position: relative;
+}
+
+.FloatContainer_block {
+  background: transparent;
+  position: absolute;
+  transition: top .2s, right .2s, bottom .2s, left .2s;
+  border-radius: 10px;
+  border: 2px $mainColor solid;
+  box-sizing: border-box;
+
+  font-family: KTFJermilovSolid;
+  color: $mainColor;
+
+  cursor: pointer;
+}
+
+.FloatContainer_block:hover {
+  border: 2px $blackColor solid;
+  color: $blackColor;
+}
+
+.FloatContainer_block:hover .FloatContainer_block__title {
+  border-bottom: 2px $blackColor solid;
+}
+
+.FloatContainer_block__title {
+  width: 95%;
+  height: 20%;
+  border-bottom: 2px $mainColor solid;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+
+
+  font-size: 55%;
+  font-weight: bold;
+  padding-left: 5%;
+  position: relative;
+}
+
+.FloatContainer_block__desc {
+
+  font-size: 20%;
+  padding: 5%;
+}
