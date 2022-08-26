@@ -1,0 +1,267 @@
+.FinalScreen {
+  background: white;
+  height: 100vh;
+  width: 100vw;
+  font-family: KTFJermilovSolid;
+  position: relative;
+
+  @mixin absoluteBody($width, $height, $left, $bottom, $zIndex) {
+    position: absolute;
+    width: $width;
+    height: $height;
+    left: $left;
+    bottom: $bottom;
+    z-index: $zIndex;
+  }
+
+  @mixin adaptiveBg($background, $backgroundSize, $backgroundColor: rgba(0,0,0,0), $noRepeat: false) {
+    background: $background, $backgroundColor;
+    background-size: $backgroundSize;
+
+    @if ($noRepeat) {
+      background: $background no-repeat, $backgroundColor;
+      background-size: $backgroundSize;
+    }
+  }
+
+  @mixin icon($bg) {
+    @include adaptiveBg($bg, 4vw, rgba(0,0,0,0), true);
+
+    width: 4vw;
+    height: 4vw;
+  }
+
+  %final_container {
+    background: white;
+    border: 3px black solid;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+
+  .borderTop {
+    @include adaptiveBg(url("../../assets/img/paint/border_top.png"), 9.5vh, rgba(0,0,255,.2));
+    @include absoluteBody(100vw, 5vh, 0, 95vh, 20);
+  }
+
+  .borderLeft {
+    @include adaptiveBg(url("../../assets/img/paint/border_left.png"), 5vh, rgba(0,0,255,.2));
+    @include absoluteBody(5vh, 90vh, 0, 5vh, 20);
+  }
+
+  .borderRight {
+    @include adaptiveBg(url("../../assets/img/paint/border_right.png"), 5vh, rgba(0,0,255,.2));
+    @include absoluteBody(5vh, 90vh, calc(100vw - 5vh), 5vh, 20);
+  }
+
+  .borderBottom {
+    @include adaptiveBg(url("../../assets/img/paint/border_bottom.png"), 9.5vh, rgba(0,0,255,.2));
+    @include absoluteBody(100vw, 5vh, 0, 0, 20);
+  }
+
+  .borderTop__bg {
+    background: white;
+    @include absoluteBody(100vw, 5vh, 0, 95vh, 19);
+  }
+
+  .borderLeft__bg {
+    background: white;
+    @include absoluteBody(5vh, 90vh, 0, 5vh, 19);
+  }
+
+  .borderRight__bg {
+    background: white;
+    @include absoluteBody(5vh, 90vh, calc(100vw - 5vh), 5vh, 19);
+  }
+
+  .borderBottom__bg {
+    background: white;
+    @include absoluteBody(100vw, 5vh, 0, 0, 19);
+  }
+
+  .FinalScreen__content {
+    position: relative;
+    overflow: hidden;
+    width: calc(100vw - 10vh);
+    height: 90vh;
+    left: 5vh;
+    bottom: -5vh;
+  }
+
+  .grass {
+
+    @include adaptiveBg(url("../../assets/img/paint/grass.png"), 70vh);
+    @include absoluteBody(calc(100vw - 10vh), 20vh, 0, 0, 15);
+    box-shadow: 0 -10px 50px rgba(38,127,0,.8);
+  }
+
+  .sky {
+    @include adaptiveBg(url("../../assets/img/paint/sky.png"), 94vh);
+    @include absoluteBody(calc(100vw - 10vh), 70vh, 0, 20vh, 11);
+  }
+
+  .home {
+    @include adaptiveBg(url("../../assets/img/paint/home.png"), 30vh);
+    @include absoluteBody(30vh, 30vh, calc(100% - 30vh), 20vh, 13);
+  }
+
+  .sun {
+    @include absoluteBody(30vh, 26vh, calc(100% - 15vh), 73vh, 11);
+  }
+
+  .rope {
+
+    @include adaptiveBg(url("../../assets/img/paint/rope.png"), 35vh);
+    @include absoluteBody(34vh, 37vh, calc(100% - 30vh), 58vh, 12);
+  }
+
+  .meteor {
+    @include absoluteBody(10vh, 10vh, 10vw, 82vh, 12);
+  }
+
+  .star {
+    @include adaptiveBg(url("../../assets/img/paint/star.png"), 11vh);
+    @include absoluteBody(11vh, 11vh, calc(40% - 30vh), 5vh, 16);
+    cursor: pointer;
+  }
+
+  .star:hover {
+    @include adaptiveBg(url("../../assets/img/paint/star_active.png"), 11vh);
+  }
+
+  .smile {
+
+    @include adaptiveBg(url("../../assets/img/paint/smile.png"), 11vh);
+    @include absoluteBody(11vh, 11vh, calc(100% - 20vh), 5vh, 16);
+  }
+
+
+  .icon_container {
+
+    @include absoluteBody(16vw, 20vw, calc(100% - 60vh), 60vh, 17);
+    @extend %final_container;
+
+    font-size: 2vw;
+    left: auto;
+    bottom: auto;
+    right: 18vw;
+    top: 3vh;
+    box-sizing: border-box;
+  }
+
+  .text_container {
+
+    @include absoluteBody(20vw, 20vw, calc(30% - 30vh), 63vh, 17);
+    @extend %final_container;
+
+    font-size: 1.1vw;
+    padding: 1vw;
+    box-sizing: border-box;
+    bottom: auto;
+    top: 3vh
+  }
+
+  .rating_container {
+
+    @include absoluteBody(20vw, 20vw, 33vw, 50vh, 17);
+    @extend %final_container;
+
+    font-size: 1vw;
+    padding: 1vw;
+    bottom: auto;
+    top: 3vh;
+    box-sizing: border-box;
+  }
+
+  .rating {
+    cursor: pointer;
+    font-size: 3.5vw;
+    -webkit-background-clip: text!important;
+    -webkit-text-fill-color: transparent!important;;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  .text_left {
+    text-align: left;
+  }
+
+  .icon_title {
+    font-family: Undertale;
+  }
+
+  .inst_icon {
+    @include icon(url("../../assets/img/paint/inst.png"));
+  }
+  .vk_icon {
+    @include icon(url("../../assets/img/paint/vk.png"));
+  }
+  .tg_icon {
+    @include icon(url("../../assets/img/paint/tg.png"));
+  }
+  .gh_icon {
+    @include icon(url("../../assets/img/paint/github.png"));
+  }
+  .gl_icon {
+    @include icon(url("../../assets/img/paint/gitlab.png"));
+  }
+  .gm_icon {
+    @include icon(url("../../assets/img/paint/gmail.png"));
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    margin-top: 5%;
+  }
+
+  .meteor__anim1 {
+    animation: 10s meteor1 infinite ease-in-out;
+
+  }
+  .meteor__anim2 {
+    animation: 10s meteor2 infinite ease-in-out;
+
+  }
+  .meteor__anim3 {
+    animation: 10s meteor3 infinite ease-in-out;
+  }
+
+  @keyframes meteor1 {
+    0% {
+      bottom: 117vh;
+      left: 3vw;
+    }
+    100% {
+      bottom: 6vh;
+      left: 64vw;
+    }
+  }
+  @keyframes meteor2 {
+    0% {
+      bottom: 100vh;
+      left: 11vw;
+    }
+    100% {
+      bottom: -11vh;
+      left: 72vw;
+    }
+  }
+  @keyframes meteor3 {
+    0% {
+      bottom: 117vh;
+      left: 16vw;
+    }
+    100% {
+      bottom: 6vh;
+      left: 77vw;
+    }
+  }
+}

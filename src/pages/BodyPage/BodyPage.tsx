@@ -5,16 +5,18 @@ import AboutScreen from "../AboutScreen/AboutScreen";
 import MatrixScreen from "../MatrixScreen/MatrixScreen";
 import ScrollHandler from "../../components/ScrollHandler/ScrollHandler";
 import StatsScreen from "../StatsScreen/StatsScreen";
+import FinalScreen from "../FinalScreen/FinalScreen";
 
 function BodyPage() {
 
-    const [page, setPage] = useState(0);
+    const [page, setPage] = useState(4);
     const [blockChangePage, setBlockChangePage] = useState(false);
     const pages = [
         <StartScreen/>,
         <AboutScreen isActive={page === 1}/>,
         <MatrixScreen isActive={page === 2}/>,
-        <StatsScreen isActive={page === 3}/>
+        <StatsScreen isActive={page === 3}/>,
+        <FinalScreen isActive={page === 4}/>
     ];
 
     useEffect(() => {

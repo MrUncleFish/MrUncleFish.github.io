@@ -8,7 +8,7 @@ interface StatsScreenProps {
     isActive: boolean;
 }
 
-function FinalScreen({isActive} : StatsScreenProps) {
+function StatsScreen({isActive} : StatsScreenProps) {
 
     const [activeAnim, setActiveAnim] = useState(false);
     const [isUnlimited, setIsUnlimited] = useState(false);
