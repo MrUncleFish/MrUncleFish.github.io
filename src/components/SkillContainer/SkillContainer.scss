@@ -1,28 +1,54 @@
-$skillHeight: 5vw;
-$skillWidth: 50vw;
+//@import "../../pages/AboutScreen/AboutScreen";
+
+$skillHeight: 8vh;
+$skillWidth: 90vw;
+
+$skillHeightPC: 10vh;
+$skillWidthPC: 90vh;
 
 .skill_container {
-  background: url("../../assets/img/arrow_left.png") calc($skillHeight / -6.7) 0 no-repeat, url("../../assets/img/arrow_right.png") 100% 0 no-repeat;
-  width: $skillWidth;
-  height: $skillHeight;
-  background-size: $skillHeight;
+  background: url("../../assets/img/arrow_left.png") calc($skillHeightPC / -6.7) 0 no-repeat, url("../../assets/img/arrow_right.png") 100% 0 no-repeat;
+  width: $skillWidthPC;
+  height: $skillHeightPC;
+  background-size: $skillHeightPC;
 
   box-sizing: border-box;
-  padding: 0 $skillHeight 0 calc($skillHeight / 1.5);
+  padding: 0 $skillHeightPC 0 calc($skillHeightPC / 1.5);
   display: flex;
   flex-direction: column;
 
   margin-left: 5vw;
-  margin-top: 3vw;
+
 }
 
 .skill_title {
   font-weight: bold;
-  font-size: 2.5vw;
-  margin-top: -1.5vw;
+  font-size: calc($skillHeightPC / 2);
+  margin-top: calc($skillHeightPC / -4);
 }
 
 .skill_text {
-  font-size: 1.5vw;
-  margin-top: -.5vw;
+  font-size: calc($skillHeightPC / 4.75);
+  margin-top: calc($skillHeightPC / -15);
+}
+
+@media all and (orientation: portrait) {
+
+  .skill_container {
+    background: url("../../assets/img/arrow_left.png") calc($skillHeight / -6.7) 0 no-repeat, url("../../assets/img/arrow_right.png") 100% 0 no-repeat;
+    width: $skillWidth;
+    height: $skillHeight;
+    background-size: $skillHeight;
+    padding: 0 $skillHeight 0 calc($skillHeight / 1.5);
+  }
+
+  .skill_title {
+    font-size: calc($skillWidth / 12);
+    margin-top: calc($skillWidth / -25);
+  }
+
+  .skill_text {
+    font-size: calc($skillWidth / 30);
+    margin-top: calc($skillWidth / -60);
+  }
 }

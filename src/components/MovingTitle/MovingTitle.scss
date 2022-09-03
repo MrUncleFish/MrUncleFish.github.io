@@ -1,8 +1,10 @@
+@import "../../pages/AboutScreen/AboutScreen";
+
 .mov_header {
-  margin-left: 5vw;
-  font-size: 7vw;
+  margin-left: $marginLeftRight;
+  font-size: $movingTitleFontSizePC;
   font-weight: bold;
-  height: 10vw;
+  z-index: 1;
 }
 
 .mov_header span {
@@ -12,5 +14,27 @@
 }
 
 .mov_header span:hover {
-  color: black;
+  color: black!important;
+}
+/*
+
+@media (min-width: 900px) {
+
+  .mov_header {
+    font-size: 60px;
+  }
+}
+*/
+
+
+@media all and (orientation: portrait) {
+
+  .mov_header {
+    font-size: $movingTitleFontSize;
+    line-height: calc($movingTitleFontSize + 1vh);
+  }
+
+  .mov_header span {
+    transition: top 0.1s, color 1s;
+  }
 }

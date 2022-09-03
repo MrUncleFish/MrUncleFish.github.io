@@ -1,5 +1,6 @@
 import React, {FC, useEffect, useState} from "react";
 import './MovingTitle.scss';
+import {isMobile} from "../../functions/mobile";
 
 interface MovingTitleProps {
     isActive: boolean;
@@ -39,9 +40,17 @@ const MovingTitle: FC<MovingTitleProps> = ({isActive, children}) => {
         }
     }
 
+    const getLetterColor = (position: number) => {
+
+        if (!isMobile()) return 'auto';
+        if (Math.abs(position) > 0) return 'black';
+
+        return 'white';
+    }
+
     return (
         <div className="mov_header">
-            {messageArray.map((letter, id) => <span style={{top: (titlePos[id] | 0) + 'vw'}} key={id}>{letter}</span>)}
+            {messageArray.map((letter, id) => <span style={{top: (titlePos[id] | 0) + 'vw', color: getLetterColor(titlePos[id] | 0)}} key={id}>{letter}</span>)}
         </div>
     )
 }

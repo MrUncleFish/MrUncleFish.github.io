@@ -7,7 +7,7 @@ $superColorEye: linear-gradient(to right top, $rightBrightPartBgColor 50%, $left
 $superColorEyeReverse: linear-gradient(to right top, $leftDarkPartBgColor 50%, $rightBrightPartBgColor 50%);
 $superColorReverse: linear-gradient(to right, $rightBrightPartBgColor 50%, $leftDarkPartBgColor 50%);
 
-$titleMarginTop: 48vh;
+$titleMarginBottom: 10vh;
 
 $eyeWidth: 45vw;
 $eyeBorderWidth: .4vh;
@@ -21,7 +21,7 @@ $eyeWidthPC: 35vh;
 $eyeMarginTopPC: 5vh;
 $titleFontSizePC: 3vh;
 $titleMarginBetweenTextPC: 10vh;
-$titleMarginTopPC: 30vh;
+$titleMarginBottomPC: 0vh;
 $titleWidthPC: 100vh;
 
 $animationBlurStart: 2s;
@@ -165,8 +165,10 @@ $animationBlurStart: 2s;
     font-family: Undertale, serif;
     font-size: $titleFontSize;
 
-    margin-top: $titleMarginTop;
     width: $titleWidth;
+
+    flex-grow: 1;
+    align-items: flex-end;
   }
 
   .titleContainer__column {
@@ -176,6 +178,7 @@ $animationBlurStart: 2s;
     width: 50vw;
 
     align-items: center;
+    margin-bottom: $titleMarginBottom;
   }
 
   .titleText {
@@ -247,10 +250,10 @@ $animationBlurStart: 2s;
     animation-delay: $animationBlurStart - 0.5s;
   }
   .second .bg_closer__right, .second .bg_closer__left {
-    animation-delay: $animationBlurStart + 1s;
+    animation-delay: $animationBlurStart + 0.25s;
   }
   .third .bg_closer__right, .third .bg_closer__left {
-    animation-delay: $animationBlurStart + 0.25s;
+    animation-delay: $animationBlurStart + 1s;
   }
   .fourth .bg_closer__right, .fourth .bg_closer__left {
     animation-delay: $animationBlurStart + 1.75s;
@@ -283,12 +286,8 @@ $animationBlurStart: 2s;
     }
 
     .titleContainer {
-      display: flex;
-      flex-direction: row;
-      font-family: Undertale, serif;
       font-size: $titleFontSizePC;
-
-      margin-top: $titleMarginTopPC;
+      margin-bottom: $titleMarginBottomPC;
       width: $titleWidthPC;
     }
   }

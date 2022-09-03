@@ -19,13 +19,13 @@ function StartScreen() {
                     </div>
                     <div className="titleText second">
                         <div className="bg_closer__right"/>
-                        и я уже давно
+                        меня зовут Дядя Рыба
                     </div>
                 </div>
                 <div className="titleContainer__column">
                     <div className="titleText third">
                         <div className="bg_closer__right"/>
-                        меня зовут Дядя Рыба
+                        и я уже давно
                     </div>
                     <div className="titleText fourth">
                         <div className="bg_closer__right"/>

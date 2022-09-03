@@ -7,9 +7,21 @@ interface FinalScreenProps {
 import meteor1 from "../../assets/img/paint/meteor_1.png";
 import meteor2 from "../../assets/img/paint/meteor_2.png";
 import meteor3 from "../../assets/img/paint/meteor_3.png";
+
+import sword2 from "../../assets/img/paint/sword_2.png";
+import sword3 from "../../assets/img/paint/sword_3.png";
+
 import sun1 from "../../assets/img/paint/sun-1.png";
 import sun2 from "../../assets/img/paint/sun-2.png";
 import sun3 from "../../assets/img/paint/sun-3.png";
+
+
+import tree from "../../assets/img/paint/tree.png";
+import tree2 from "../../assets/img/paint/tree_1.png";
+
+import wind from "../../assets/img/paint/wind_1.png";
+import wind2 from "../../assets/img/paint/wind_2.png";
+import wind3 from "../../assets/img/paint/wind_3.png";
 
 const animMeteors = [
     meteor1,
@@ -21,10 +33,15 @@ const animSun = [
     sun2,
     sun3
 ]
+const animSword = [
+    sword2,
+    sword3
+]
 
 function FinalScreen({isActive} : FinalScreenProps) {
 
-    const [animState, setAnimState] = useState(0);
+    const [animTwoState, setAnimTwoState] = useState(0);
+    const [animThreeState, setAnimThreeState] = useState(0);
     const [ratingWidth, setRatingWidth] = useState(0);
     const [activeChooseRating, setActiveChooseRating] = useState(false);
     const [animTickBlock, setAnimTickBlock] = useState(false);
@@ -37,14 +54,17 @@ function FinalScreen({isActive} : FinalScreenProps) {
 
         setTimeout(() => {
 
-            if (animState >= 2) setAnimState(0);
-            else setAnimState(animState + 1);
+            if (animThreeState >= 2) setAnimThreeState(0);
+            else setAnimThreeState(animThreeState + 1);
+
+            if (animTwoState >= 1) setAnimTwoState(0);
+            else setAnimTwoState(animTwoState + 1);
 
             setAnimTickBlock(false);
 
         }, 300);
 
-    },  [animState, animTickBlock]);
+    },  [animTwoState, animThreeState, animTickBlock]);
 
     const openRatingChoose = (e: React.MouseEvent) => setActiveChooseRating(true);
     const closeRatingChoose = (e: React.MouseEvent) => setActiveChooseRating(false);
@@ -71,13 +91,17 @@ function FinalScreen({isActive} : FinalScreenProps) {
             <div className="grass"/>
             <div className="sky"/>
             <div className="home"/>
-            <div className="rope"/>
-            <img src={animSun[animState] || animSun[0]} className="sun"/>
-            <img src={animMeteors[animState] || animMeteors[0]} className="meteor meteor__anim1"/>
-            <img src={animMeteors[animState] || animMeteors[0]} className="meteor meteor__anim2"/>
-            <img src={animMeteors[animState] || animMeteors[0]} className="meteor meteor__anim3"/>
-            <div className="star"/>
-            <div className="smile"/>
+            {/*<div className="rope"/>*/}
+            <img src={animSun[animThreeState] || animSun[0]} className="sun"/>
+            <img src={animMeteors[animThreeState] || animMeteors[0]} className="meteor meteor__anim1"/>
+            <img src={animMeteors[animThreeState] || animMeteors[0]} className="meteor meteor__anim2"/>
+            <img src={animMeteors[animThreeState] || animMeteors[0]} className="meteor meteor__anim3"/>
+            <img src={animSword[animTwoState] || animSword[0]} className="sword"/>
+            <img src={wind3} className="wind"/>
+            <img src={tree} className="tree"/>
+            <img src={tree2} className="tree2"/>
+            {/*<div className="star"/>*/}
+            {/*<div className="smile"/>*/}
 
             <div className="icon_container">
                 <div className="icon_title">Мои соцсети:</div>

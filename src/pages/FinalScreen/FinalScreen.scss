@@ -2,8 +2,9 @@
   background: white;
   height: 100vh;
   width: 100vw;
-  font-family: KTFJermilovSolid;
+  font-family: Undertale;
   position: relative;
+
 
   @mixin absoluteBody($width, $height, $left, $bottom, $zIndex) {
     position: absolute;
@@ -94,9 +95,8 @@
 
   .grass {
 
-    @include adaptiveBg(url("../../assets/img/paint/grass.png"), 70vh);
-    @include absoluteBody(calc(100vw - 10vh), 20vh, 0, 0, 15);
-    box-shadow: 0 -10px 50px rgba(38,127,0,.8);
+    @include adaptiveBg(url("../../assets/img/paint/grass_v2.png"), 70vh);
+    @include absoluteBody(calc(100vw - 10vh), 22vh, 0, 0, 15);
   }
 
   .sky {
@@ -105,8 +105,8 @@
   }
 
   .home {
-    @include adaptiveBg(url("../../assets/img/paint/home.png"), 30vh);
-    @include absoluteBody(30vh, 30vh, calc(100% - 30vh), 20vh, 13);
+    @include adaptiveBg(url("../../assets/img/paint/castle.png"), 30vh);
+    @include absoluteBody(30vh, 40vh, calc(100% - 40vh), 15vh, 16);
   }
 
   .sun {
@@ -127,6 +127,21 @@
     @include adaptiveBg(url("../../assets/img/paint/star.png"), 11vh);
     @include absoluteBody(11vh, 11vh, calc(40% - 30vh), 5vh, 16);
     cursor: pointer;
+  }
+
+  .sword {
+    @include absoluteBody(15vh, 18.75vh, calc(26% - 30vh), 19vh, 13);
+  }
+
+  .wind {
+    @include absoluteBody(20vh, 10vh, calc(25% - 30vh), 33vh, 12);
+  }
+
+  .tree {
+    @include absoluteBody(30vh, 41.7vh, calc(45% - 30vh), 15vh, 16);
+  }
+  .tree2 {
+    @include absoluteBody(30vh, 48.9vh, calc(68% - 30vh), 13vh, 16);
   }
 
   .star:hover {
@@ -190,10 +205,6 @@
 
   .text_left {
     text-align: left;
-  }
-
-  .icon_title {
-    font-family: Undertale;
   }
 
   .inst_icon {

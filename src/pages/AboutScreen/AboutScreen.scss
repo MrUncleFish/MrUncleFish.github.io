@@ -1,25 +1,46 @@
 $mainThemeColor: white;
 $bgColor: #FFD700;
 
+$marginLeftRight: 5vw;
+
+$movingTitleFontSizePC: 8.9vh;
+$movingTitleFontSize: 13vw;
+$movingTitleMarginTopPC: 2vh;
+$movingTitleMarginTop: 2vh;
+$textFontSizePC: 2.65vh;
+$textFontSize: 1.85vh;
+$textMarginTopPC: 2vh;
+$textMarginTop: 1vh;
+
+$bottomRowHeightPC: calc(50vh + 5vw);
+$bottomRowHeight: 50vh;
+$rowMarginBottom: 2vh;
+
+$iconCircleSizePC: 50vh;
+$iconCircleSize: 80vw;
+
 .SecondScreen {
   background: $bgColor;
   height: 100vh;
   width: 100vw;
   color: $mainThemeColor;
+  display: flex;
+  flex-direction: column;
   font-family: KTFJermilovSolid;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
 
   .top_space {
     width: 100vw;
-    height: 5vw;
-  }
-
-  .header_text {
-    margin: 0 5vw;
-    font-size: 1.8vw;
+    height: $movingTitleMarginTop;
   }
 
   .row {
     display: flex;
+    height: $bottomRowHeightPC;
+    margin-bottom: $rowMarginBottom;
+    z-index: 2;
   }
 
   @keyframes logoListSpin {
@@ -39,18 +60,24 @@ $bgColor: #FFD700;
     }
   }
 
+  .logo_container__body {
+    position: absolute;
+    right: $marginLeftRight;
+    bottom: calc($iconCircleSizePC / 10);
+    z-index: 1;
+  }
+
   .logo_container {
-    width: 30vw;
-    height: 30vw;
+    width: $iconCircleSizePC;
+    height: $iconCircleSizePC;
     position: relative;
-    margin-left: 10vw;
 
     animation: logoListSpin linear 7.5s infinite;
   }
 
   .logo_container img {
-    width: 5vw;
-    height: 5vw;
+    width: calc($iconCircleSizePC / 6);
+    height: calc($iconCircleSizePC / 6);
     position: absolute;
 
     animation: logoItemSpin linear 7.5s infinite;
@@ -66,7 +93,7 @@ $bgColor: #FFD700;
   }
 
   .sass_logo {
-    width: 10vw!important;
+    width: calc($iconCircleSizePC / 3)!important;
     @include coordinates(55%, 25%);
   }
 
@@ -75,7 +102,7 @@ $bgColor: #FFD700;
   }
 
   .react_logo {
-    width: 6vw!important;
+    width: calc($iconCircleSizePC / 5)!important;
     @include coordinates(54%, 70%);
   }
 
@@ -84,15 +111,15 @@ $bgColor: #FFD700;
   }
 
   .js_logo {
-    width: 4.5vw!important;
+    width: calc($iconCircleSizePC / 6.5)!important;
     @include coordinates(9%, 47%);
 
   }
 
   .php_logo {
     @include coordinates(13%, 21%);
-    width: 7vw!important;
-    height: 7vw!important;
+    width: calc($iconCircleSizePC / 4.3)!important;
+    height: calc($iconCircleSizePC / 4.3)!important;
   }
 
   .header_text span {
@@ -108,4 +135,99 @@ $bgColor: #FFD700;
     cursor: pointer;
   }
 
+  .SkillList {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5vh 0;
+    box-sizing: border-box;
+  }
+
+  .header_text {
+    margin: $textMarginTopPC $marginLeftRight 0 $marginLeftRight;
+    font-size: $textFontSizePC;
+    z-index: 3;
+    position: relative;
+  }
+
+/*  @media (min-width: 900px) {
+    .header_text {
+      font-size: 16px;
+    }
+  }*/
+
+  @media all and (orientation: portrait) {
+
+    .SkillList {
+      padding: 0;
+      justify-content: space-around;
+    }
+
+    .header_text {
+      font-size: $textFontSize;
+      margin-top: $textMarginTop;
+      margin-bottom: $textMarginTop;
+    }
+
+    .row {
+      height: 80vh;
+      border-top: 2px black solid;
+    }
+
+    .logo_container__body {
+      position: absolute;
+      width: 100vw;
+      left: 0;
+      right: auto;
+      display: flex;
+      justify-content: center;
+      z-index: 1;
+      opacity: .1;
+    }
+
+    .logo_container__body {
+      bottom: calc($iconCircleSize / 10);
+    }
+
+    .logo_container {
+      width: $iconCircleSize;
+      height: $iconCircleSize;
+    }
+
+    .logo_container img {
+      width: calc($iconCircleSize / 6);
+      height: calc($iconCircleSize / 6);
+    }
+
+    .logo_container__body {
+      bottom: calc($iconCircleSize / 10);
+    }
+
+    .logo_container {
+      width: $iconCircleSize;
+      height: $iconCircleSize;
+    }
+
+    .logo_container img {
+      width: calc($iconCircleSize / 6);
+      height: calc($iconCircleSize / 6);
+    }
+
+    .sass_logo {
+      width: calc($iconCircleSize / 3)!important;
+    }
+    .react_logo {
+      width: calc($iconCircleSize / 5)!important;
+    }
+
+    .js_logo {
+      width: calc($iconCircleSize / 6.5)!important;
+    }
+
+    .php_logo {
+      width: calc($iconCircleSize / 4.3)!important;
+      height: calc($iconCircleSize / 4.3)!important;
+    }
+  }
 }

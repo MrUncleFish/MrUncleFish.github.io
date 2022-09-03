@@ -9,7 +9,7 @@ import FinalScreen from "../FinalScreen/FinalScreen";
 
 function BodyPage() {
 
-    const [page, setPage] = useState(4);
+    const [page, setPage] = useState(3);
     const [blockChangePage, setBlockChangePage] = useState(false);
     const pages = [
         <StartScreen/>,

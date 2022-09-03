@@ -3,21 +3,23 @@ $bgColor: black;
 
 
 .ThirdScreen {
+
+  // overflow hidden везде
+  overflow: hidden;
   background: $bgColor;
   height: 100vh;
   width: 100vw;
   position: relative;
   font-family: Undertale, serif;
-
-  .top_space {
-    width: 100vw;
-    height: 5vw;
-  }
+  display: flex;
+  justify-content: center;
 
   .row {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
     position: absolute;
+    width: 100vw;
   }
 
   %matrixTemplate {
@@ -30,52 +32,109 @@ $bgColor: black;
   }
 
   .table {
-    width: 30vw;
-    height: 40vw;
+    width: 50vh;
+    height: 60vh;
 
-    margin-left: 15vw;
     position: relative;
 
     box-sizing: border-box;
-    padding: 1vw;
+    padding: 2vh;
+
+    font-size: 3vh;
 
 
     @extend %matrixTemplate;
   }
 
   .rowContent {
-    margin-top: 5vw;
     display: flex;
+    align-items: center;
+    height: 100vh;
+    justify-content: space-around;
+    width: 150vh;
   }
 
   .buttonColumn {
-    margin-left: 10vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
   }
 
   .button {
     @extend %matrixTemplate;
-    width: 30vw;
-    height: 5vw;
+    box-shadow: 0px 0px 10px 0px $mainThemeColor;
+    width: 50vh;
+    height: 10vh;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-  }
+    border: 1px $mainThemeColor solid;
+    box-sizing: border-box;
 
-  .button:not(:first-child) {
-    margin-top: 3vw;
-    box-shadow: 0px 0px 10px 0px $mainThemeColor;
+    .button__title {
+      width: 70%;
+      height: 101%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-right: 1px green solid;
+    }
+
+    .button__role {
+      font-size: 2vh;
+      text-align: center;
+      padding: 2vh;
+      width: 30%;
+    }
   }
 
   .button:hover {
     background: $mainThemeColor;
     color: $bgColor;
-  }
-}
+    border: 1px black solid;
 
-.numberColumn {
-  color: $mainThemeColor;
-  font-size: 1.25vw;
-  margin-left: 4vw;
-  font-family: Undertale, serif;
+    .button__title {
+      border-right: 1px black solid;
+    }
+  }
+
+  @media all and (orientation: portrait) {
+
+    .rowContent {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      justify-content: space-around;
+      width: 150vh;
+    }
+
+    .table {
+      margin-top: 2vw;
+      width: 80vw;
+      height: 50vh;
+      padding: 2vw;
+      font-size: calc(3.2vw + 2vh);
+    }
+
+    .buttonColumn {
+      height: 50vh;
+    }
+
+    .button {
+      width: 80vw;
+      height: 8vh;
+
+      .button__title {
+        font-size: 3vh;
+      }
+
+      .button__role {
+        font-size: 2vh;
+      }
+    }
+  }
+
 }
