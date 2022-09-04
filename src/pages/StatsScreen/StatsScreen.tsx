@@ -51,7 +51,7 @@ function StatsScreen({isActive}: StatsScreenProps) {
                     </div>
                 </div>
                 <div className="GalleryContainer">
-                    {MOVING_OBJECT_LIST.map((item) => <div className="GalleryItem">
+                    {MOVING_OBJECT_LIST.map((item) => <div key={item.id} className="GalleryItem">
                         <div className="FloatContainer_block__title">{item.title}</div>
                         <div className="FloatContainer_block__desc">{item.desc}</div>
                     </div>)}

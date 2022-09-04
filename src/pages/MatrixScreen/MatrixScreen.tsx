@@ -1,5 +1,5 @@
 import './MatrixScreen.scss'
-import React, {Fragment} from "react";
+import React, {Fragment, useState} from "react";
 import {generateRandomIntegerInRange, getRandomNumberList} from "../../functions/math";
 import RandomNumberColumn from "../../components/RandomNumberColumn/RandomNumberColumn";
 import {getMaxrixNumbersCount} from "../../functions/mobile";
@@ -10,9 +10,9 @@ interface MatrixScreenProps {
 
 function MatrixScreen({isActive} : MatrixScreenProps) {
 
-    if (isActive) console.log(1);
+    const [randomNumbers, setRandomNumbers] = useState(getRandomNumberList(getMaxrixNumbersCount(), 5, 43))
 
-    const randomNumbers = getRandomNumberList(getMaxrixNumbersCount(), 5, 43);
+    if (isActive) console.log(1);
 
     return (
         <div className="ThirdScreen">

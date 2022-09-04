@@ -1,5 +1,5 @@
 import './FinalScreen.scss'
-import React, {useEffect, useRef, useState} from "react";
+import React, {Fragment, useEffect, useRef, useState} from "react";
 interface FinalScreenProps {
     isActive: boolean;
 }
@@ -22,6 +22,7 @@ import tree2 from "../../assets/img/paint/tree_1.png";
 import wind from "../../assets/img/paint/wind_1.png";
 import wind2 from "../../assets/img/paint/wind_2.png";
 import wind3 from "../../assets/img/paint/wind_3.png";
+import {isMobile} from "../../functions/mobile";
 
 const animMeteors = [
     meteor1,
@@ -91,7 +92,6 @@ function FinalScreen({isActive} : FinalScreenProps) {
             <div className="grass"/>
             <div className="sky"/>
             <div className="home"/>
-            {/*<div className="rope"/>*/}
             <img src={animSun[animThreeState] || animSun[0]} className="sun"/>
             <img src={animMeteors[animThreeState] || animMeteors[0]} className="meteor meteor__anim1"/>
             <img src={animMeteors[animThreeState] || animMeteors[0]} className="meteor meteor__anim2"/>
@@ -100,23 +100,32 @@ function FinalScreen({isActive} : FinalScreenProps) {
             <img src={wind3} className="wind"/>
             <img src={tree} className="tree"/>
             <img src={tree2} className="tree2"/>
-            {/*<div className="star"/>*/}
-            {/*<div className="smile"/>*/}
 
-            <div className="icon_container">
+           <div className="icon_container">
                 <div className="icon_title">Мои соцсети:</div>
-                <div className="row">
+               {isMobile()
+                   ? <div className="row">
+                       <div className="vk_icon"/>
+                       <div className="tg_icon"/>
+                       <div className="inst_icon"/>
+                       <div className="gl_icon"/>
+                       <div className="gm_icon"/>
+                       <div className="gh_icon"/>
+                   </div>
+                   : <Fragment><div className="row">
                     <div className="vk_icon"/>
                     <div className="tg_icon"/>
-                </div>
-                <div className="row">
                     <div className="inst_icon"/>
-                    <div className="gh_icon"/>
                 </div>
                 <div className="row">
                     <div className="gl_icon"/>
                     <div className="gm_icon"/>
-                </div>
+                    <div className="gh_icon"/>
+                </div></Fragment>}
+            </div>
+
+            <div className="kate_container">
+                <a>За рисунки спасибо <a>Kate</a></a>
             </div>
 
             <div className="text_container">
@@ -124,6 +133,7 @@ function FinalScreen({isActive} : FinalScreenProps) {
                 или просто посмотреть на меня соц сетях, и как раз для этого вы можете протыкать прекрасный список
                 соц сетей, или же поставить оценку сайту с помощью слова-ползунка, он будет благодарен.
             </div>
+
             <div className="rating_container">
                 <div className="text_left">
                     Технология проставления оценки:<br/>
