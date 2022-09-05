@@ -67,18 +67,27 @@ function FinalScreen({isActive} : FinalScreenProps) {
 
     },  [animTwoState, animThreeState, animTickBlock]);
 
-    const openRatingChoose = (e: React.MouseEvent) => setActiveChooseRating(true);
-    const closeRatingChoose = (e: React.MouseEvent) => setActiveChooseRating(false);
-    const setRating = (e: React.MouseEvent) => {
+    const openRatingChoose = (e: React.MouseEvent | React.TouchEvent) => setActiveChooseRating(true);
+    const closeRatingChoose = (e: React.MouseEvent | React.TouchEvent) => setActiveChooseRating(false);
+
+    const setRatingByMouse = (e: React.MouseEvent) => changeRating(e.clientX);
+
+    const setRatingByTouch = (e: React.TouchEvent) => changeRating(e.nativeEvent.touches[0].clientX);
+
+    const changeRating = (inputValue: number) => {
 
         if (!activeChooseRating) return;
 
         // @ts-ignore
-        let clickWidth = e.clientX - ratingRef.current.getBoundingClientRect().x;
+        let clickWidth = inputValue - ratingRef.current.getBoundingClientRect().x;
         // @ts-ignore
         let generalWidth = ratingRef.current.getBoundingClientRect().width;
 
-        setRatingWidth(clickWidth / generalWidth * 100);
+        let result = clickWidth / generalWidth * 100;
+        if (result > 100) result = 100;
+        if (result < 0) result = 0;
+
+        setRatingWidth(result);
     }
 
     return <div className="FinalScreen">
@@ -145,7 +154,15 @@ function FinalScreen({isActive} : FinalScreenProps) {
                 </div>
                 <div ref={ratingRef}
                      style={{background: '-webkit-linear-gradient(0deg, yellow ' + ratingWidth + '%, black ' + ratingWidth + '%)',}}
-                     className="rating"  onMouseDown={openRatingChoose} onMouseUp={closeRatingChoose} onMouseMove={setRating} onMouseLeave={closeRatingChoose}>звездочки</div>
+                     className="rating"
+                     onMouseDown={openRatingChoose}
+                     onMouseUp={closeRatingChoose}
+                     onMouseMove={setRatingByMouse}
+                     onMouseLeave={closeRatingChoose}
+                     onTouchStart={openRatingChoose}
+                     onTouchMove={setRatingByTouch}
+                     onTouchEnd={closeRatingChoose}
+                >звездочки</div>
                 <div>{Math.ceil(ratingWidth)}%</div>
             </div>
         </div>
