@@ -4,6 +4,11 @@ import MovingObjectContainer from "../../components/MovingObjectContainer/Moving
 import heroAva from "../../assets/img/hero_ava.png";
 import {isMobile, isTooWideForStats} from "../../functions/mobile";
 import {MOVING_OBJECT_LIST} from "../../config/MovingObjectList";
+import {Swiper, SwiperSlide} from "swiper/react";
+import { Pagination, Navigation } from "swiper";
+
+import "swiper/css";
+import "swiper/css/pagination";
 
 
 interface StatsScreenProps {
@@ -38,6 +43,13 @@ function StatsScreen({isActive}: StatsScreenProps) {
 
     }, [changeChangeBlocked, currentChange, activeAnim, isUnlimited]);
 
+    const pagination = {
+        clickable: true,
+        renderBullet: function (index: number, className: string) {
+            return '<span class="' + className + '">' + (index + 1) + "</span>";
+        },
+    };
+
     if (isMobile()) return (
         <div className="StatsScreen">
             <div className="StatsContainer StatsContainer__mobile">
@@ -50,15 +62,21 @@ function StatsScreen({isActive}: StatsScreenProps) {
                         </div>
                     </div>
                 </div>
-                <div className="GalleryContainer">
-                    {MOVING_OBJECT_LIST.map((item) => <div key={item.id} className="GalleryItem">
+                <Swiper
+                    slidesPerView={1.5}
+                    spaceBetween={20}
+                    pagination={{
+                        type: "fraction",
+                        horizontalClass: "GalleryCounter"
+                    }}
+                    centeredSlides={true}
+                    modules={[Pagination]}
+                    className="GalleryContainer">
+                    {MOVING_OBJECT_LIST.map((item) => <SwiperSlide key={item.id} className="GalleryItem">
                         <div className="FloatContainer_block__title">{item.title}</div>
                         <div className="FloatContainer_block__desc">{item.desc}</div>
-                    </div>)}
-                </div>
-                <div className="GalleryCounter">
-                    1/3
-                </div>
+                    </SwiperSlide>)}
+                </Swiper>
             </div>
         </div>
     )

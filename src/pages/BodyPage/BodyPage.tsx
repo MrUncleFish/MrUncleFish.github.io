@@ -6,6 +6,7 @@ import MatrixScreen from "../MatrixScreen/MatrixScreen";
 import ScrollHandler from "../../components/ScrollHandler/ScrollHandler";
 import StatsScreen from "../StatsScreen/StatsScreen";
 import FinalScreen from "../FinalScreen/FinalScreen";
+import {isMobile} from "../../functions/mobile";
 
 function BodyPage() {
 
@@ -44,6 +45,12 @@ function BodyPage() {
             setPage(pageNumber);
             setBlockChangePage(true);
     }
+
+    if (isMobile()) return (
+        <Spiwer className="BodyPage" >
+            {pages.map((e, id) => <div key={id}>{e}</div>)}
+        </Spiwer>
+    )
 
     return (
         <div onKeyDown={keyPressHandler} tabIndex={0} onKeyUp={keyPressHandler} onWheel={wheelHandler}

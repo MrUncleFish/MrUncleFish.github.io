@@ -116,7 +116,7 @@ $buttonSizeWide: 4.5vh;
   color: $mainColor;
   width: $buttonSize * 4;
   height: $buttonSize;
-  font-size: $buttonSize / 2;
+  font-size: calc($buttonSize / 2);
   margin-top: 2vw;
   display: flex;
   justify-content: center;
@@ -177,7 +177,7 @@ $buttonSizeWide: 4.5vh;
   .activate_button {
     width: $buttonSizeWide * 4;
     height: $buttonSizeWide;
-    font-size: $buttonSizeWide / 2;
+    font-size: calc($buttonSizeWide / 2);
     margin-top: 2vh;
   }
 
@@ -216,12 +216,8 @@ $buttonSizeWide: 4.5vh;
   }
 
   .GalleryContainer {
-    height: 45vh;
+    height: 55vh;
     width: 100vw;
-    overflow: hidden;
-    overflow-x: scroll;
-    display: flex;
-    position: relative;
   }
 
   .GalleryContainer::-webkit-scrollbar {
@@ -229,26 +225,14 @@ $buttonSizeWide: 4.5vh;
   }
 
   .GalleryCounter {
-    margin-top: 3vh;
     font-size: 3vh;
     color: $mainColor;
   }
 
   .GalleryItem {
     @extend %FloatContainerStyle;
-    height: 100%;
-    width: 60vw;
+    height: 80%;
     border: .75vh $mainColor solid;
-
-    margin: 0 5vw;
-  }
-
-  .GalleryItem:first-child {
-    margin-left: 20vw;
-  }
-
-  .GalleryItem:last-child {
-    margin-right: 20vw;
   }
 
   .GalleryItem .FloatContainer_block__title {
@@ -257,7 +241,7 @@ $buttonSizeWide: 4.5vh;
   }
 
   .GalleryItem .FloatContainer_block__desc {
-    width: 60vw;
+    width: 60vw!important;
     font-size: 5.5vw;
     padding: 1vw 5vw 1vw 2vw;
     box-sizing: border-box;
