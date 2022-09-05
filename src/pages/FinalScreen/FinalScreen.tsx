@@ -105,27 +105,27 @@ function FinalScreen({isActive} : FinalScreenProps) {
                 <div className="icon_title">Мои соцсети:</div>
                {isMobile()
                    ? <div className="row">
-                       <div className="vk_icon"/>
-                       <div className="tg_icon"/>
-                       <div className="inst_icon"/>
-                       <div className="gl_icon"/>
-                       <div className="gm_icon"/>
-                       <div className="gh_icon"/>
+                       <a href="https://vk.com/id171138541" target="_blank"><div className="vk_icon"/></a>
+                       <a href="https://t.me/FarmStreet" target="_blank"><div className="tg_icon"/></a>
+                       <a href="https://vk.com/id119792781" target="_blank"><div className="inst_icon"/></a>
+                       <a href="https://vk.com/id119792781" target="_blank"><div className="gl_icon"/></a>
+                       <a href="https://vk.com/id119792781" target="_blank"><div className="gm_icon"/></a>
+                       <a href="https://vk.com/id119792781" target="_blank"><div className="gh_icon"/></a>
                    </div>
                    : <Fragment><div className="row">
-                    <div className="vk_icon"/>
-                    <div className="tg_icon"/>
-                    <div className="inst_icon"/>
+                   <a href="https://vk.com/id171138541" target="_blank"><div className="vk_icon"/></a>
+                   <a href="https://t.me/FarmStreet" target="_blank"><div className="tg_icon"/></a>
+                   <a href="https://vk.com/id119792781" target="_blank"><div className="inst_icon"/></a>
                 </div>
                 <div className="row">
-                    <div className="gl_icon"/>
-                    <div className="gm_icon"/>
-                    <div className="gh_icon"/>
+                   <a href="https://vk.com/id119792781" target="_blank"><div className="gl_icon"/></a>
+                   <a href="https://vk.com/id119792781" target="_blank"><div className="gm_icon"/></a>
+                   <a href="https://vk.com/id119792781" target="_blank"><div className="gh_icon"/></a>
                 </div></Fragment>}
             </div>
 
             <div className="kate_container">
-                <a>За рисунки спасибо <a>Kate</a></a>
+                <span>За рисунки спасибо <a href="https://vk.com/id119792781" target="_blank">KATE</a></span>
             </div>
 
             <div className="text_container">

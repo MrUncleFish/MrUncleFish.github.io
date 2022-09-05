@@ -1,3 +1,8 @@
+$refColor: darkblue;
+$bgColor: rgba(0,0,255,.2);
+$windowBorderAndFontColor: black;
+$windowBgColor: white;
+
 .FinalScreen {
   background: white;
   height: 100vh;
@@ -30,6 +35,7 @@
 
     width: 6vh;
     height: 6vh;
+    cursor: pointer;
   }
   @mixin icon_mob($bg) {
     @include adaptiveBg($bg, 10vw, rgba(0,0,0,0), true);
@@ -39,8 +45,9 @@
   }
 
   %final_container {
-    background: white;
-    border: 3px black solid;
+    background: $windowBgColor;
+    border: 3px $windowBorderAndFontColor solid;
+    color: $windowBorderAndFontColor;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -51,22 +58,22 @@
 
 
   .borderTop {
-    @include adaptiveBg(url("../../assets/img/paint/border_top.png"), 9.5vh, rgba(0,0,255,.2));
+    @include adaptiveBg(url("../../assets/img/paint/border_top.png"), 9.5vh, $bgColor);
     @include absoluteBody(100vw, 5vh, 0, 95vh, 20);
   }
 
   .borderLeft {
-    @include adaptiveBg(url("../../assets/img/paint/border_left.png"), 5vh, rgba(0,0,255,.2));
+    @include adaptiveBg(url("../../assets/img/paint/border_left.png"), 5vh, $bgColor);
     @include absoluteBody(5vh, 90vh, 0, 5vh, 20);
   }
 
   .borderRight {
-    @include adaptiveBg(url("../../assets/img/paint/border_right.png"), 5vh, rgba(0,0,255,.2));
+    @include adaptiveBg(url("../../assets/img/paint/border_right.png"), 5vh, $bgColor);
     @include absoluteBody(5vh, 90vh, calc(100vw - 5vh), 5vh, 20);
   }
 
   .borderBottom {
-    @include adaptiveBg(url("../../assets/img/paint/border_bottom.png"), 9.5vh, rgba(0,0,255,.2));
+    @include adaptiveBg(url("../../assets/img/paint/border_bottom.png"), 9.5vh, $bgColor);
     @include absoluteBody(100vw, 5vh, 0, 0, 20);
   }
 
@@ -173,6 +180,14 @@
     -khtml-user-select: none;
     -webkit-user-select: none;
     user-select: none;
+  }
+
+  .kate_container a {
+
+    color: $refColor;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
   }
 
   .text_left {
@@ -404,16 +419,22 @@
       box-sizing: border-box;
     }
 
-    .text_container {
+    .rating_container {
 
-      @include absoluteBody(50vw, 50vw, 1vh, 63vh, 17);
+      @include absoluteBody(40vw, 40vw, 40vh, 50vh, 17);
       @extend %final_container;
 
-      font-size: 3vw;
-      padding: 2vw;
-      box-sizing: border-box;
+      font-size: 2.4vw;
+      padding: 1vw;
       bottom: auto;
-      top: 1vh;
+      left: auto;
+      top: 3vh;
+      right: 1vw;
+      box-sizing: border-box;
+    }
+
+    .rating {
+      font-size: 7vw;
     }
   }
 }

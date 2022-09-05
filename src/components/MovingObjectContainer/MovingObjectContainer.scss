@@ -15,12 +15,12 @@
   @extend %FloatContainerStyle;
 }
 
-.FloatContainer:hover {
+.FloatContainer_block:hover {
   border: 2px $blackColor solid;
   color: $blackColor;
 }
 
-.FloatContainer:hover .FloatContainer_block__title {
+.FloatContainer_block:hover .FloatContainer_block__title {
   border-bottom: 2px $blackColor solid;
 }
 
