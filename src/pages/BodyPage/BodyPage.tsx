@@ -7,6 +7,9 @@ import ScrollHandler from "../../components/ScrollHandler/ScrollHandler";
 import StatsScreen from "../StatsScreen/StatsScreen";
 import FinalScreen from "../FinalScreen/FinalScreen";
 import {isMobile} from "../../functions/mobile";
+import {Swiper, SwiperSlide} from "swiper/react";
+
+import "swiper/css";
 
 function BodyPage() {
 
@@ -47,9 +50,9 @@ function BodyPage() {
     }
 
     if (isMobile()) return (
-        <Spiwer className="BodyPage" >
-            {pages.map((e, id) => <div key={id}>{e}</div>)}
-        </Spiwer>
+        <Swiper direction={"vertical"} className="BodyPage__mobile" onSlideChange={(e) => setPage(e.realIndex)}>
+            {pages.map((e, id) => <SwiperSlide key={id}>{e}</SwiperSlide>)}
+        </Swiper>
     )
 
     return (
