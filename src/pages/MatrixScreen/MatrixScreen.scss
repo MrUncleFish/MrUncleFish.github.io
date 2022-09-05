@@ -27,7 +27,7 @@ $bgColor: black;
     border: 1px $mainThemeColor solid;
     border-radius: 10px;
     color: $mainThemeColor;
-    background: black;
+    background: $bgColor;
     position: relative;
   }
 
@@ -79,7 +79,7 @@ $bgColor: black;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-right: 1px green solid;
+      border-right: 1px $mainThemeColor solid;
     }
 
     .button__role {
@@ -93,10 +93,10 @@ $bgColor: black;
   .button:hover {
     background: $mainThemeColor;
     color: $bgColor;
-    border: 1px black solid;
+    border: 1px $bgColor solid;
 
     .button__title {
-      border-right: 1px black solid;
+      border-right: 1px $bgColor solid;
     }
   }
 

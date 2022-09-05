@@ -107,20 +107,20 @@ function FinalScreen({isActive} : FinalScreenProps) {
                    ? <div className="row">
                        <a href="https://vk.com/id171138541" target="_blank"><div className="vk_icon"/></a>
                        <a href="https://t.me/FarmStreet" target="_blank"><div className="tg_icon"/></a>
-                       <a href="https://vk.com/id119792781" target="_blank"><div className="inst_icon"/></a>
-                       <a href="https://vk.com/id119792781" target="_blank"><div className="gl_icon"/></a>
-                       <a href="https://vk.com/id119792781" target="_blank"><div className="gm_icon"/></a>
-                       <a href="https://vk.com/id119792781" target="_blank"><div className="gh_icon"/></a>
+                       <a href="https://www.instagram.com/key_lord20/" target="_blank"><div className="inst_icon"/></a>
+                       <a href="https://gitlab.com/alex2000mn" target="_blank"><div className="gl_icon"/></a>
+                       <a href="mailto:alex2000mn@gmail.com?subject=Приветствую%20Александра" target="_blank"><div className="gm_icon"/></a>
+                       <a href="https://github.com/FarmStreet" target="_blank"><div className="gh_icon"/></a>
                    </div>
                    : <Fragment><div className="row">
                    <a href="https://vk.com/id171138541" target="_blank"><div className="vk_icon"/></a>
                    <a href="https://t.me/FarmStreet" target="_blank"><div className="tg_icon"/></a>
-                   <a href="https://vk.com/id119792781" target="_blank"><div className="inst_icon"/></a>
+                   <a href="https://www.instagram.com/key_lord20/" target="_blank"><div className="inst_icon"/></a>
                 </div>
                 <div className="row">
-                   <a href="https://vk.com/id119792781" target="_blank"><div className="gl_icon"/></a>
-                   <a href="https://vk.com/id119792781" target="_blank"><div className="gm_icon"/></a>
-                   <a href="https://vk.com/id119792781" target="_blank"><div className="gh_icon"/></a>
+                   <a href="https://gitlab.com/alex2000mn" target="_blank"><div className="gl_icon"/></a>
+                   <a href="mailto:alex2000mn@gmail.com?subject=Приветствую%20Александра" target="_blank"><div className="gm_icon"/></a>
+                   <a href="https://github.com/FarmStreet" target="_blank"><div className="gh_icon"/></a>
                 </div></Fragment>}
             </div>
 

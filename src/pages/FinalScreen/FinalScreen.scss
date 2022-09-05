@@ -419,6 +419,18 @@ $windowBgColor: white;
       box-sizing: border-box;
     }
 
+    .text_container {
+
+      @include absoluteBody(50vw, 50vw, 1vw, 63vh, 17);
+      @extend %final_container;
+
+      font-size: 3vw;
+      padding: 2vw;
+      box-sizing: border-box;
+      bottom: auto;
+      top: 1vh;
+    }
+
     .rating_container {
 
       @include absoluteBody(40vw, 40vw, 40vh, 50vh, 17);

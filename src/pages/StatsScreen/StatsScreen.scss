@@ -201,7 +201,7 @@ $buttonSizeWide: 4.5vh;
     width: 20vh;
     height: 20vh;
     margin-top: 5vh;
-    border: .75vh white solid;
+    border: .75vh $mainColor solid;
   }
 
   .HeroNick {
@@ -217,34 +217,49 @@ $buttonSizeWide: 4.5vh;
 
   .GalleryContainer {
     height: 45vh;
-    width: 90vw;
+    width: 100vw;
     overflow: hidden;
     overflow-x: scroll;
     display: flex;
     position: relative;
   }
 
+  .GalleryContainer::-webkit-scrollbar {
+    width: 0;
+  }
+
   .GalleryCounter {
     margin-top: 3vh;
     font-size: 3vh;
-    color: white;
+    color: $mainColor;
   }
 
   .GalleryItem {
     @extend %FloatContainerStyle;
     height: 100%;
-    width: 70vw;
+    width: 60vw;
     border: .75vh $mainColor solid;
 
     margin: 0 5vw;
   }
 
+  .GalleryItem:first-child {
+    margin-left: 20vw;
+  }
+
+  .GalleryItem:last-child {
+    margin-right: 20vw;
+  }
+
   .GalleryItem .FloatContainer_block__title {
-    font-size: 4vh;
+    font-size: 7vw;
     border-bottom: .75vh $mainColor solid;
   }
 
   .GalleryItem .FloatContainer_block__desc {
-    font-size: 2.7vh;
+    width: 60vw;
+    font-size: 5.5vw;
+    padding: 1vw 5vw 1vw 2vw;
+    box-sizing: border-box;
   }
 }
