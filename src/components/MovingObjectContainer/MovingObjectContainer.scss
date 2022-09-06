@@ -28,12 +28,12 @@
 .FloatContainer_block__title {
   width: 95%;
   height: 20%;
-  font-size: 1vw;
+  font-size: 1.4vw;
 }
 
 .FloatContainer_block__desc {
 
-  font-size: .9vw;
+  font-size: .8vw;
 }
 
 .StatsContainer__wide {
@@ -44,7 +44,7 @@
   }
 
   .FloatContainer_block__desc {
-    font-size: getTrueVH(1.7);
+    font-size: getTrueVH(1.5);
   }
 
 }
