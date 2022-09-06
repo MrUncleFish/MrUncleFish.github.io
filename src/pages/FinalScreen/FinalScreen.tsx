@@ -16,10 +16,7 @@ import sun3 from "../../assets/img/paint/sun-3.png";
 import tree from "../../assets/img/paint/tree.png";
 import tree2 from "../../assets/img/paint/tree_1.png";
 
-import wind from "../../assets/img/paint/wind_1.png";
-import wind2 from "../../assets/img/paint/wind_2.png";
 import wind3 from "../../assets/img/paint/wind_3.png";
-import {isMobile} from "../../functions/mobile";
 
 const animMeteors = [
     meteor1,

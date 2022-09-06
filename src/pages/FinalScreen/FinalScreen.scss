@@ -1,7 +1,7 @@
 @import "../BodyPage/BodyPage";
 
 $refColor: darkblue;
-$bgColor: rgba(0,0,255,.2);
+$bgColor: rgba(2, 2, 238, 0.2);
 $windowBorderAndFontColor: black;
 $windowBgColor: white;
 
@@ -312,17 +312,17 @@ $borderWidth: getTrueVH(.7);
     }
 
     .home {
-      @include adaptiveBg(url("../../assets/img/paint/castle.png"), 45vw);
-      @include absoluteBody(45vw, 60vw, 120vw, getTrueVH(13), 16);
+      @include adaptiveBg(url("../../assets/img/paint/castle.png"), 30vw);
+      @include absoluteBody(30vw, 40vw, 120vw, getTrueVH(15), 16);
       left: auto;
-      right: -20vw;
+      right: 1vw;
     }
 
     .tree {
-      @include absoluteBody(30vw, 41.7vw, 20vw, getTrueVH(10), 16);
+      @include absoluteBody(20vw, 27.8vw, 30vw, getTrueVH(15), 16);
     }
     .tree2 {
-      @include absoluteBody(30vw, 48.9vw, 44vw, getTrueVH(5), 16);
+      @include absoluteBody(20vw, 32.6vw, 44vw, getTrueVH(12), 16);
     }
 
     .sword {

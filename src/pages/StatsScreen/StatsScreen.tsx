@@ -1,7 +1,7 @@
 import './StatsScreen.scss'
 import React, {Fragment, useEffect, useState} from "react";
 import MovingObjectContainer from "../../components/MovingObjectContainer/MovingObjectContainer";
-import heroAva from "../../assets/img/hero_ava.png";
+import heroAva from "../../assets/img/hero_ava.jpg";
 import {isTooWideForStats} from "../../functions/mobile";
 import {MOVING_OBJECT_LIST} from "../../config/MovingObjectList";
 import {Swiper, SwiperSlide} from "swiper/react";
