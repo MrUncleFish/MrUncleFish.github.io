@@ -19,7 +19,7 @@ export const MOVING_OBJECT_LIST: MovingObjectEntity[] = [{
     moveSpeedX: MovingObject.MOVE_SPEED,
     moveSpeedY: MovingObject.MOVE_SPEED,
     title: 'English',
-    desc: 'Мой уровень - intermediate. Активно ищучаю уже два года, поступил в магистратуру на английский язык для бизнес-коммуникаций'
+    desc: 'Мой уровень - intermediate. Активно изучаю уже два года, поступил в магистратуру на английский язык для бизнес-коммуникаций'
 },{
     id: 2,
     width: 15,
@@ -59,7 +59,7 @@ export const MOVING_OBJECT_LIST: MovingObjectEntity[] = [{
     moveSpeedX: MovingObject.MOVE_SPEED,
     moveSpeedY: MovingObject.MOVE_SPEED,
     title: 'Psycho',
-    desc: 'Подсел на эту тему уже давно, просто нравится разбирать следить за некоторыми психологами, читать интересные мысли'
+    desc: 'Подсел на эту тему уже давно, просто нравится следить за контентом некоторых психологов, читать интересные мысли'
 },{
     id: 6,
     width: 15,

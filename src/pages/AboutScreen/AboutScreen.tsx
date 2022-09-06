@@ -39,7 +39,7 @@ function AboutScreen({isActive} : AboutScreenProps) {
 
             <div className="row">
                 <div className="SkillList">
-                    <SkillContainer title="HTML+CSS/SASS">знаком непонаслышне с адаптивной версткой, сверстал множество кроссплатформенных приложений</SkillContainer>
+                    <SkillContainer title="HTML+CSS/SASS">знаком непонаслышке с адаптивной версткой, сверстал множество кроссплатформенных приложений</SkillContainer>
                     <SkillContainer title="JS/TS + React">Имею опыт решения разнообразных задач, разработал много адаптивных механик (кликеры, мини-игры, карты и т.д.)</SkillContainer>
                     <SkillContainer title="Backend(PHP/C#)">Имею и такой опыт, в основном любительский, много работал в связке с бекендерами</SkillContainer>
                 </div>
