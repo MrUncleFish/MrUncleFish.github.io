@@ -69,7 +69,7 @@ export const MOVING_OBJECT_LIST: MovingObjectEntity[] = [{
     moveSpeedX: -MovingObject.MOVE_SPEED,
     moveSpeedY: -MovingObject.MOVE_SPEED,
     title: 'Driving',
-    desc: 'Просто люблю езду, водить классно, эдакий купол с музыкой, на котором просто куда-то ппасть'
+    desc: 'Просто люблю езду, водить классно, эдакий купол с музыкой, на котором просто куда-то попасть'
 },{
     id: 7,
     width: 15,
