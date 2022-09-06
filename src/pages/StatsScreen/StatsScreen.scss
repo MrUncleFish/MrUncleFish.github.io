@@ -1,3 +1,5 @@
+@import "../BodyPage/BodyPage";
+
 $bgColor: #cb8b16;
 $bgColorStats: rgb(248, 167, 5);
 $bgColorBlocks: rgb(255, 136, 0);
@@ -10,7 +12,7 @@ $greenColor: green;
 $paddingBody: 2.5vw;
 
 $buttonSize: 3vw;
-$buttonSizeWide: 4.5vh;
+$buttonSizeWide: getTrueVH(4.5);
 
 %FloatContainerStyle {
   background: transparent;
@@ -39,7 +41,7 @@ $buttonSizeWide: 4.5vh;
   display: flex;
   flex-direction: column;
   background: $bgColor;
-  height: 100vh;
+  height: getTrueVH(100);
   width: 100vw;
   align-items: center;
   justify-content: center;
@@ -49,7 +51,7 @@ $buttonSizeWide: 4.5vh;
 }
 
 .StatsContainer {
-  border: .5vh $mainColor solid;
+  border: getTrueVH(.5) $mainColor solid;
   border-radius: 3px;
   box-sizing: border-box;
   width: 95vw;
@@ -145,78 +147,78 @@ $buttonSizeWide: 4.5vh;
 }
 
 .StatsContainer__wide {
-  width: 164vh;
-  height: 95vh;
+  width: getTrueVH(164);
+  height: getTrueVH(95);
 
   .HeroAva {
-    width: 20vh;
-    height: 20vh;
-    margin-top: 5vh;
+    width: getTrueVH(20);
+    height: getTrueVH(20);
+    margin-top: getTrueVH(5);
   }
 
   .HeroNick {
     color: $mainColor;
-    font-size: 5vh;
+    font-size: getTrueVH(5);
   }
 
   .HeroDesc {
-    font-size: 2vh;
-    padding: 0 1vh;
+    font-size: getTrueVH(2);
+    padding: 0 getTrueVH(1);
   }
 
   .HeroChangeName {
-    font-size: 2.5vh;
-    margin-top: 2vh;
+    font-size: getTrueVH(2.5);
+    margin-top: getTrueVH(2);
   }
 
   .battery {
-    height: 3vh;
-    width: 13vh;
+    height: getTrueVH(3);
+    width: getTrueVH(13);
   }
 
   .activate_button {
-    width: $buttonSizeWide * 4;
+    width: calc($buttonSizeWide * 4);
     height: $buttonSizeWide;
     font-size: calc($buttonSizeWide / 2);
-    margin-top: 2vh;
+    margin-top: getTrueVH(2);
   }
 
   .secret_desc {
-    font-size: 2.5vh;
+    font-size: getTrueVH(2.5);
   }
 }
 
 .StatsContainer__mobile {
   width: 100vw;
-  height: 100vh;
+  height: getTrueVH(100);
   flex-direction: column;
   align-items: center;
   position: relative;
 
   .HeroContainer {
-    height: 45vh;
+    height: getTrueVH(45);
   }
 
   .HeroAva {
-    width: 20vh;
-    height: 20vh;
-    margin-top: 5vh;
-    border: .75vh $mainColor solid;
+    width: getTrueVH(20);
+    height: getTrueVH(20);
+    margin-top: getTrueVH(5);
+    border: getTrueVH(.75) $mainColor solid;
   }
 
   .HeroNick {
-    font-size: 5vh;
+    font-size: getTrueVH(5);
   }
 
   .HeroDesc {
-    font-size: 2vh;
+    font-size: getTrueVH(2);
     text-align: center;
     width: 80vw;
     padding: 0;
   }
 
   .GalleryContainer {
-    height: 55vh;
+    height: getTrueVH(55);
     width: 100vw;
   }
 
@@ -225,19 +227,19 @@ $buttonSizeWide: 4.5vh;
   }
 
   .GalleryCounter {
-    font-size: 3vh;
+    font-size: getTrueVH(3);
     color: $mainColor;
   }
 
   .GalleryItem {
     @extend %FloatContainerStyle;
     height: 80%;
-    border: .75vh $mainColor solid;
+    border: getTrueVH(.75) $mainColor solid;
   }
 
   .GalleryItem .FloatContainer_block__title {
     font-size: 7vw;
-    border-bottom: .75vh $mainColor solid;
+    border-bottom: getTrueVH(.75) $mainColor solid;
   }
 
   .GalleryItem .FloatContainer_block__desc {

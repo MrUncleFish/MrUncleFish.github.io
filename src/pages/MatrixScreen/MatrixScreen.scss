@@ -1,3 +1,5 @@
+@import "../BodyPage/BodyPage";
+
 $mainThemeColor: darkgreen;
 $bgColor: black;
 
@@ -7,7 +9,7 @@ $bgColor: black;
   // overflow hidden везде
   overflow: hidden;
   background: $bgColor;
-  height: 100vh;
+  height: getTrueVH(100);
   width: 100vw;
   position: relative;
   font-family: Undertale, serif;
@@ -32,15 +34,15 @@ $bgColor: black;
   }
 
   .table {
-    width: 50vh;
-    height: 60vh;
+    width: getTrueVH(50);
+    height: getTrueVH(60);
 
     position: relative;
 
     box-sizing: border-box;
-    padding: 2vh;
+    padding: getTrueVH(2);
 
-    font-size: 3vh;
+    font-size: getTrueVH(3);
 
 
     @extend %matrixTemplate;
@@ -49,13 +51,13 @@ $bgColor: black;
   .rowContent {
     display: flex;
     align-items: center;
-    height: 100vh;
+    height: getTrueVH(100);
     justify-content: space-around;
-    width: 150vh;
+    width: getTrueVH(150);
   }
 
   .buttonColumn {
-    height: 60vh;
+    height: getTrueVH(60);
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -64,8 +66,8 @@ $bgColor: black;
   .button {
     @extend %matrixTemplate;
     box-shadow: 0px 0px 10px 0px $mainThemeColor;
-    width: 50vh;
-    height: 10vh;
+    width: getTrueVH(50);
+    height: getTrueVH(10);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -83,9 +85,9 @@ $bgColor: black;
     }
 
     .button__role {
-      font-size: 2vh;
+      font-size: getTrueVH(2);
       text-align: center;
-      padding: 2vh;
+      padding: getTrueVH(2);
       width: 30%;
     }
   }
@@ -106,33 +108,33 @@ $bgColor: black;
       display: flex;
       flex-direction: column;
       align-items: center;
-      height: 100vh;
+      height: getTrueVH(100);
       justify-content: space-around;
-      width: 150vh;
+      width: getTrueVH(150);
     }
 
     .table {
       margin-top: 2vw;
       width: 80vw;
-      height: 50vh;
+      height: getTrueVH(50);
       padding: 2vw;
-      font-size: calc(3.2vw + 2vh);
+      font-size: calc(3.2vw + getTrueVH(2));
     }
 
     .buttonColumn {
-      height: 50vh;
+      height: getTrueVH(50);
     }
 
     .button {
       width: 80vw;
-      height: 8vh;
+      height: getTrueVH(8);
 
       .button__title {
-        font-size: 3vh;
+        font-size: getTrueVH(3);
       }
 
       .button__role {
-        font-size: 2vh;
+        font-size: getTrueVH(2);
       }
     }
   }

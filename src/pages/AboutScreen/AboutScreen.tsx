@@ -25,7 +25,7 @@ function AboutScreen({isActive} : AboutScreenProps) {
                 <div className="top_space"/>
                 <MovingTitle isActive={isActive}>давайте знакомиться!</MovingTitle>
                 <div className="header_text">
-                    текст рыба, который меня восхваливает текст рыба,
+                    332текст рыба, который меня восхваливает текст рыба,
                     который меня восхваливает текст рыба, который меня восхваливает
                     текст рыба, который меня восхваливает а я уже <span>30</span> лет как молодец
                     текст рыба, который меня восхваливает

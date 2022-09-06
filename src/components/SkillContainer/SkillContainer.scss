@@ -1,10 +1,11 @@
 //@import "../../pages/AboutScreen/AboutScreen";
+@import "../../pages/BodyPage/BodyPage";
 
-$skillHeight: 8vh;
+$skillHeight: getTrueVH(8);
 $skillWidth: 90vw;
 
-$skillHeightPC: 10vh;
-$skillWidthPC: 90vh;
+$skillHeightPC: getTrueVH(10);
+$skillWidthPC: getTrueVH(90);
 
 .skill_container {
   background: url("../../assets/img/arrow_left.png") calc($skillHeightPC / -6.7) 0 no-repeat, url("../../assets/img/arrow_right.png") 100% 0 no-repeat;

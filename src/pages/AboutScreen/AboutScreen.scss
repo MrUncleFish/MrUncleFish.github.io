@@ -1,27 +1,28 @@
+@import "../BodyPage/BodyPage";
+
 $mainThemeColor: white;
 $bgColor: #FFD700;
 
 $marginLeftRight: 5vw;
-
-$movingTitleFontSizePC: 8.9vh;
+$movingTitleFontSizePC: getTrueVH(8.9);
 $movingTitleFontSize: 13vw;
-$movingTitleMarginTopPC: 2vh;
-$movingTitleMarginTop: 2vh;
-$textFontSizePC: 2.65vh;
-$textFontSize: 1.85vh;
-$textMarginTopPC: 2vh;
-$textMarginTop: 1vh;
+$movingTitleMarginTopPC: getTrueVH(2);
+$movingTitleMarginTop: getTrueVH(2);
+$textFontSizePC: getTrueVH(2.65);
+$textFontSize: getTrueVH(1.85);
+$textMarginTopPC: getTrueVH(2);
+$textMarginTop: getTrueVH(1);
 
-$bottomRowHeightPC: calc(50vh + 5vw);
-$bottomRowHeight: 50vh;
-$rowMarginBottom: 2vh;
+$bottomRowHeightPC: calc(getTrueVH(50) + 5vw);
+$bottomRowHeight: getTrueVH(50);
+$rowMarginBottom: getTrueVH(2);
 
-$iconCircleSizePC: 50vh;
+$iconCircleSizePC: getTrueVH(50);
 $iconCircleSize: 80vw;
 
 .SecondScreen {
   background: $bgColor;
-  height: 100vh;
+  height: getTrueVH(100);
   width: 100vw;
   color: $mainThemeColor;
   display: flex;
@@ -140,7 +141,7 @@ $iconCircleSize: 80vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 5vh 0;
+    padding: getTrueVH(5) 0;
     box-sizing: border-box;
   }
 
@@ -171,8 +172,8 @@ $iconCircleSize: 80vw;
     }
 
     .row {
-      height: 80vh;
-      border-top: 2px black solid;
+      height: getTrueVH(80);
+      //border-top: 2px black solid;
     }
 
     .logo_container__body {

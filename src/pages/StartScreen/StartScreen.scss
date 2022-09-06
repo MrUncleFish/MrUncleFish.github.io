@@ -1,3 +1,4 @@
+@import "../BodyPage/BodyPage";
 
 $leftDarkPartBgColor: black;
 $rightBrightPartBgColor: pink;
@@ -7,22 +8,22 @@ $superColorEye: linear-gradient(to right top, $rightBrightPartBgColor 50%, $left
 $superColorEyeReverse: linear-gradient(to right top, $leftDarkPartBgColor 50%, $rightBrightPartBgColor 50%);
 $superColorReverse: linear-gradient(to right, $rightBrightPartBgColor 50%, $leftDarkPartBgColor 50%);
 
-$titleMarginBottom: 10vh;
+$titleMarginBottom: getTrueVH(10);
 
 $eyeWidth: 45vw;
-$eyeBorderWidth: .4vh;
-$eyeMarginTop: 5vh;
+$eyeBorderWidth: getTrueVH(.4);
+$eyeMarginTop: getTrueVH(5);
 $titleFontSize: 4vw;
 $titleRotate: -6deg;
-$titleMarginBetweenText: 5vh;
+$titleMarginBetweenText: getTrueVH(5);
 $titleWidth: 100%;
 
-$eyeWidthPC: 35vh;
-$eyeMarginTopPC: 5vh;
-$titleFontSizePC: 3vh;
-$titleMarginBetweenTextPC: 10vh;
-$titleMarginBottomPC: 0vh;
-$titleWidthPC: 100vh;
+$eyeWidthPC: getTrueVH(35);
+$eyeMarginTopPC: getTrueVH(5);
+$titleFontSizePC: getTrueVH(3);
+$titleMarginBetweenTextPC: getTrueVH(10);
+$titleMarginBottomPC: getTrueVH(0);
+$titleWidthPC: getTrueVH(100);
 
 $animationBlurStart: 2s;
 
@@ -30,7 +31,7 @@ $animationBlurStart: 2s;
   display: flex;
   flex-direction: column;
   background: $superColor;
-  height: 100vh;
+  height: getTrueVH(100);
   align-items: center;
   position: relative;
 
@@ -39,7 +40,7 @@ $animationBlurStart: 2s;
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: getTrueVH(100);
     z-index: 5;
     background: black;
 
@@ -278,7 +279,7 @@ $animationBlurStart: 2s;
 
     .eye_entity {
       position: absolute;
-      width: $eyeWidthPC * 1.45;
+      width: calc($eyeWidthPC * 1.45);
       height: $eyeWidthPC;
       margin-top: $eyeMarginTopPC;
       display: flex;

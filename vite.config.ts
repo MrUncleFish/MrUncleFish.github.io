@@ -38,5 +38,8 @@ export default defineConfig({
                 injectTo: 'head-prepend'
             }
         })
-    ]
+    ],
+    build: {
+        outDir: 'build'
+    }
 })

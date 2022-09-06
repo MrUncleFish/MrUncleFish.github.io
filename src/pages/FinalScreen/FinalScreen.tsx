@@ -1,8 +1,5 @@
 import './FinalScreen.scss'
 import React, {Fragment, useEffect, useRef, useState} from "react";
-interface FinalScreenProps {
-    isActive: boolean;
-}
 
 import meteor1 from "../../assets/img/paint/meteor_1.png";
 import meteor2 from "../../assets/img/paint/meteor_2.png";
@@ -39,7 +36,12 @@ const animSword = [
     sword3
 ]
 
-function FinalScreen({isActive} : FinalScreenProps) {
+interface FinalScreenProps {
+    isActive: boolean;
+    mobile: boolean;
+}
+
+function FinalScreen({isActive, mobile} : FinalScreenProps) {
 
     const [animTwoState, setAnimTwoState] = useState(0);
     const [animThreeState, setAnimThreeState] = useState(0);
@@ -112,7 +114,7 @@ function FinalScreen({isActive} : FinalScreenProps) {
 
            <div className="icon_container">
                 <div className="icon_title">Мои соцсети:</div>
-               {isMobile()
+               {mobile
                    ? <div className="row">
                        <a href="https://vk.com/id171138541" target="_blank"><div className="vk_icon"/></a>
                        <a href="https://t.me/FarmStreet" target="_blank"><div className="tg_icon"/></a>

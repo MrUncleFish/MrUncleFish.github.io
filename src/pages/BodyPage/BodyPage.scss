@@ -13,5 +13,9 @@ body::-webkit-scrollbar {
 
 .BodyPage__mobile {
   width: 100vw;
-  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+@function getTrueVH($size) {
+  @return calc(var(--vh, 1vh) * $size);
 }

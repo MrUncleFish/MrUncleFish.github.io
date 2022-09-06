@@ -1,8 +1,8 @@
 import './MatrixScreen.scss'
-import React, {Fragment, useState} from "react";
+import React, {Fragment, useEffect, useState} from "react";
 import {generateRandomIntegerInRange, getRandomNumberList} from "../../functions/math";
 import RandomNumberColumn from "../../components/RandomNumberColumn/RandomNumberColumn";
-import {getMaxrixNumbersCount} from "../../functions/mobile";
+import {getMaxrixNumbersCount, isMobile, isTooWideForStats} from "../../functions/mobile";
 
 interface MatrixScreenProps {
     isActive: boolean;
@@ -10,14 +10,22 @@ interface MatrixScreenProps {
 
 function MatrixScreen({isActive} : MatrixScreenProps) {
 
-    const [randomNumbers, setRandomNumbers] = useState(getRandomNumberList(getMaxrixNumbersCount(), 5, 43))
+    const [randomNumbers, setRandomNumbers] = useState(getRandomNumberList(200, 5, 43))
+    const [maxCountNumbers, setMaxCountNumbers] = useState(getMaxrixNumbersCount());
 
     if (isActive) console.log(1);
+
+    useEffect(() => {
+        updateConfig();
+        window.addEventListener("resize", updateConfig);
+    }, []);
+
+    const updateConfig = () => setMaxCountNumbers(getMaxrixNumbersCount())
 
     return (
         <div className="ThirdScreen">
             <div className="row">
-                {randomNumbers.map((value, index) =>  <RandomNumberColumn key={index} length={value}/>)}
+                {randomNumbers.slice(0, maxCountNumbers).map((value, index) =>  <RandomNumberColumn key={index} length={value}/>)}
             </div>
 
             <div className="rowContent">

@@ -1,3 +1,5 @@
+@import "../BodyPage/BodyPage";
+
 $refColor: darkblue;
 $bgColor: rgba(0,0,255,.2);
 $windowBorderAndFontColor: black;
@@ -5,7 +7,7 @@ $windowBgColor: white;
 
 .FinalScreen {
   background: white;
-  height: 100vh;
+  height: getTrueVH(100);
   width: 100vw;
   font-family: Undertale;
   position: relative;
@@ -31,10 +33,10 @@ $windowBgColor: white;
   }
 
   @mixin icon($bg) {
-    @include adaptiveBg($bg, 6vh, rgba(0,0,0,0), true);
+    @include adaptiveBg($bg, getTrueVH(6), rgba(0,0,0,0), true);
 
-    width: 6vh;
-    height: 6vh;
+    width: getTrueVH(6);
+    height: getTrueVH(6);
     cursor: pointer;
   }
   @mixin icon_mob($bg) {
@@ -58,122 +60,122 @@ $windowBgColor: white;
 
 
   .borderTop {
-    @include adaptiveBg(url("../../assets/img/paint/border_top.png"), 9.5vh, $bgColor);
-    @include absoluteBody(100vw, 5vh, 0, 95vh, 20);
+    @include adaptiveBg(url("../../assets/img/paint/border_top.png"), getTrueVH(9.5), $bgColor);
+    @include absoluteBody(100vw, getTrueVH(5), 0, getTrueVH(95), 20);
   }
 
   .borderLeft {
-    @include adaptiveBg(url("../../assets/img/paint/border_left.png"), 5vh, $bgColor);
-    @include absoluteBody(5vh, 90vh, 0, 5vh, 20);
+    @include adaptiveBg(url("../../assets/img/paint/border_left.png"), getTrueVH(5), $bgColor);
+    @include absoluteBody(getTrueVH(5), getTrueVH(90), 0, getTrueVH(5), 20);
   }
 
   .borderRight {
-    @include adaptiveBg(url("../../assets/img/paint/border_right.png"), 5vh, $bgColor);
-    @include absoluteBody(5vh, 90vh, calc(100vw - 5vh), 5vh, 20);
+    @include adaptiveBg(url("../../assets/img/paint/border_right.png"), getTrueVH(5), $bgColor);
+    @include absoluteBody(getTrueVH(5), getTrueVH(90), calc(100vw - getTrueVH(5)), getTrueVH(5), 20);
   }
 
   .borderBottom {
-    @include adaptiveBg(url("../../assets/img/paint/border_bottom.png"), 9.5vh, $bgColor);
-    @include absoluteBody(100vw, 5vh, 0, 0, 20);
+    @include adaptiveBg(url("../../assets/img/paint/border_bottom.png"), getTrueVH(9.5), $bgColor);
+    @include absoluteBody(100vw, getTrueVH(5), 0, 0, 20);
   }
 
   .FinalScreen__content {
     position: relative;
     overflow: hidden;
-    width: calc(100vw - 10vh);
-    height: 90vh;
-    left: 5vh;
-    bottom: -5vh;
+    width: calc(100vw - getTrueVH(10));
+    height: getTrueVH(90);
+    left: getTrueVH(5);
+    bottom: getTrueVH(-5);
   }
 
   .grass {
 
-    @include adaptiveBg(url("../../assets/img/paint/grass_v2.png"), 70vh);
-    @include absoluteBody(calc(100vw - 10vh), 22vh, 0, 0, 15);
+    @include adaptiveBg(url("../../assets/img/paint/grass_v2.png"), getTrueVH(70));
+    @include absoluteBody(calc(100vw - getTrueVH(10)), getTrueVH(22), 0, 0, 15);
   }
 
   .sky {
-    @include adaptiveBg(url("../../assets/img/paint/sky.png"), 94vh);
-    @include absoluteBody(calc(100vw - 10vh), 70vh, 0, 20vh, 11);
+    @include adaptiveBg(url("../../assets/img/paint/sky.png"), getTrueVH(94));
+    @include absoluteBody(calc(100vw - getTrueVH(10)), getTrueVH(70), 0, getTrueVH(20), 11);
   }
 
   .home {
-    @include adaptiveBg(url("../../assets/img/paint/castle.png"), 30vh);
-    @include absoluteBody(30vh, 40vh, calc(100% - 40vh), 15vh, 16);
+    @include adaptiveBg(url("../../assets/img/paint/castle.png"), getTrueVH(30));
+    @include absoluteBody(getTrueVH(30), getTrueVH(40), calc(100% - getTrueVH(40)), getTrueVH(15), 16);
     left: auto;
-    right: 2.5vh;
+    right: getTrueVH(2.5);
   }
 
   .sun {
-    @include absoluteBody(30vh, 26vh, calc(100% - 15vh), 73vh, 11);
+    @include absoluteBody(getTrueVH(30), getTrueVH(26), calc(100% - getTrueVH(15)), getTrueVH(73), 11);
   }
 
   .meteor {
-    @include absoluteBody(10vh, 10vh, 10vw, 82vh, 12);
+    @include absoluteBody(getTrueVH(10), getTrueVH(10), 10vw, getTrueVH(82), 12);
   }
 
   .sword {
-    @include absoluteBody(15vh, 18.75vh, 2.5vh, 19vh, 13);
+    @include absoluteBody(getTrueVH(15), getTrueVH(18.75), getTrueVH(2.5), getTrueVH(19), 13);
   }
 
   .wind {
-    @include absoluteBody(20vh, 10vh, 2.5vh, 33vh, 12);
+    @include absoluteBody(getTrueVH(20), getTrueVH(10), getTrueVH(2.5), getTrueVH(33), 12);
   }
 
   .tree {
-    @include absoluteBody(30vh, 41.7vh, calc(45% - 30vh), 15vh, 16);
+    @include absoluteBody(getTrueVH(30), getTrueVH(41.7), calc(45% - getTrueVH(30)), getTrueVH(15), 16);
   }
   .tree2 {
-    @include absoluteBody(30vh, 48.9vh, calc(68% - 30vh), 13vh, 16);
+    @include absoluteBody(getTrueVH(30), getTrueVH(48.9), calc(68% - getTrueVH(30)), getTrueVH(13), 16);
   }
 
   .icon_container {
 
-    @include absoluteBody(30vh, 25vh, calc(100% - 60vh), 1vh, 17);
+    @include absoluteBody(getTrueVH(30), getTrueVH(25), calc(100% - getTrueVH(60)), getTrueVH(1), 17);
     @extend %final_container;
 
-    font-size: 4vh;
+    font-size: getTrueVH(4);
     left: auto;
-    right: 35vh;
+    right: getTrueVH(35);
     box-sizing: border-box;
   }
 
   .kate_container {
 
-    @include absoluteBody(20vh, 10vh, 1vh, 1vh, 17);
+    @include absoluteBody(getTrueVH(20), getTrueVH(10), getTrueVH(1), getTrueVH(1), 17);
     @extend %final_container;
 
-    font-size: 2vh;
+    font-size: getTrueVH(2);
     box-sizing: border-box;
   }
 
   .text_container {
 
-    @include absoluteBody(35vh, 35vh, 1vh, 63vh, 17);
+    @include absoluteBody(getTrueVH(35), getTrueVH(35), getTrueVH(1), getTrueVH(63), 17);
     @extend %final_container;
 
-    font-size: 1.8vh;
-    padding: 2vh;
+    font-size: getTrueVH(1.8);
+    padding: getTrueVH(2);
     box-sizing: border-box;
     bottom: auto;
-    top: 3vh;
+    top: getTrueVH(3);
   }
 
   .rating_container {
 
-    @include absoluteBody(28vh, 28vh, 40vh, 50vh, 17);
+    @include absoluteBody(getTrueVH(28), getTrueVH(28), getTrueVH(40), getTrueVH(50), 17);
     @extend %final_container;
 
-    font-size: 1.5vh;
-    padding: 1vh;
+    font-size: getTrueVH(1.5);
+    padding: getTrueVH(1);
     bottom: auto;
-    top: 3vh;
+    top: getTrueVH(3);
     box-sizing: border-box;
   }
 
   .rating {
     cursor: pointer;
-    font-size: 5vh;
+    font-size: getTrueVH(5);
     -webkit-background-clip: text!important;
     -webkit-text-fill-color: transparent!important;;
     -moz-user-select: none;
@@ -234,31 +236,31 @@ $windowBgColor: white;
 
   @keyframes meteor1 {
     0% {
-      bottom: 117vh;
+      bottom: getTrueVH(117);
       left: 3vw;
     }
     100% {
-      bottom: 6vh;
+      bottom: getTrueVH(6);
       left: 64vw;
     }
   }
   @keyframes meteor2 {
     0% {
-      bottom: 100vh;
+      bottom: getTrueVH(100);
       left: 11vw;
     }
     100% {
-      bottom: -11vh;
+      bottom: getTrueVH(-11);
       left: 72vw;
     }
   }
   @keyframes meteor3 {
     0% {
-      bottom: 117vh;
+      bottom: getTrueVH(117);
       left: 16vw;
     }
     100% {
-      bottom: 6vh;
+      bottom: getTrueVH(6);
       left: 77vw;
     }
   }
@@ -266,71 +268,71 @@ $windowBgColor: white;
   @media all and (orientation: portrait) {
 
     .borderTop {
-      @include adaptiveBg(url("../../assets/img/paint/border_top.png"), 4vh, rgba(0,0,255,.2));
-      @include absoluteBody(100vw, 2vh, 0, 98vh, 20);
+      @include adaptiveBg(url("../../assets/img/paint/border_top.png"), getTrueVH(4), rgba(0,0,255,.2));
+      @include absoluteBody(100vw, getTrueVH(2), 0, getTrueVH(98), 20);
     }
 
     .borderLeft {
       @include adaptiveBg(url("../../assets/img/paint/border_left.png"), 1.9vw, rgba(0,0,255,.2));
-      @include absoluteBody(2vw, 96vh, 0, 2vh, 20);
+      @include absoluteBody(2vw, getTrueVH(96), 0, getTrueVH(2), 20);
     }
 
     .borderRight {
       @include adaptiveBg(url("../../assets/img/paint/border_right.png"), 3.5vw, rgba(0,0,255,.2));
-      @include absoluteBody(2vw, 96vh, calc(100vw - 2vw), 2vh, 20);
+      @include absoluteBody(2vw, getTrueVH(96), calc(100vw - 2vw), getTrueVH(2), 20);
     }
 
     .borderBottom {
-      @include adaptiveBg(url("../../assets/img/paint/border_bottom.png"), 3.5vh, rgba(0,0,255,.2));
-      @include absoluteBody(100vw, 2vh, 0, 0, 20);
+      @include adaptiveBg(url("../../assets/img/paint/border_bottom.png"), getTrueVH(3.5), rgba(0,0,255,.2));
+      @include absoluteBody(100vw, getTrueVH(2), 0, 0, 20);
     }
 
     .FinalScreen__content {
       width: 96vw;
-      height: 96vh;
+      height: getTrueVH(96);
       left: 2vw;
-      bottom: -2vh;
+      bottom: getTrueVH(-2);
     }
 
     .grass {
 
-      @include adaptiveBg(url("../../assets/img/paint/grass_v2.png"), 70vh);
-      @include absoluteBody(96vw, 20vh, 0, 0, 15);
+      @include adaptiveBg(url("../../assets/img/paint/grass_v2.png"), getTrueVH(70));
+      @include absoluteBody(96vw, getTrueVH(20), 0, 0, 15);
     }
 
     .sky {
-      @include adaptiveBg(url("../../assets/img/paint/sky.png"), 110vh);
-      @include absoluteBody(96vw, 80vh, 0, 16vh, 11);
+      @include adaptiveBg(url("../../assets/img/paint/sky.png"), getTrueVH(110));
+      @include absoluteBody(96vw, getTrueVH(80), 0, getTrueVH(16), 11);
     }
 
     .sun {
-      @include absoluteBody(30vh, 26vh, calc(100% - 15vh), 82vh, 11);
+      @include absoluteBody(getTrueVH(30), getTrueVH(26), calc(100% - getTrueVH(15)), getTrueVH(82), 11);
     }
 
     .home {
       @include adaptiveBg(url("../../assets/img/paint/castle.png"), 45vw);
-      @include absoluteBody(45vw, 60vw, 120vw, 13vh, 16);
+      @include absoluteBody(45vw, 60vw, 120vw, getTrueVH(13), 16);
       left: auto;
       right: -20vw;
     }
 
     .tree {
-      @include absoluteBody(30vw, 41.7vw, 27vw, 10vh, 16);
+      @include absoluteBody(30vw, 41.7vw, 20vw, getTrueVH(10), 16);
     }
     .tree2 {
-      @include absoluteBody(30vw, 48.9vw, 50vw, 5vh, 16);
+      @include absoluteBody(30vw, 48.9vw, 44vw, getTrueVH(5), 16);
     }
 
     .sword {
-      @include absoluteBody(15vw, 18.75vw, 8vw, 18vh, 13);
+      @include absoluteBody(15vw, 18.75vw, 8vw, getTrueVH(18), 13);
     }
 
     .wind {
-      @include absoluteBody(20vw, 10vw, 7vw, 25vh, 12);
+      @include absoluteBody(20vw, 10vw, 7vw, getTrueVH(25), 12);
     }
 
     .meteor {
-      @include absoluteBody(20vw, 20vw, 10vw, 82vh, 12);
+      @include absoluteBody(20vw, 20vw, 10vw, getTrueVH(82), 12);
     }
 
     .meteor__anim1 {
@@ -347,38 +349,38 @@ $windowBgColor: white;
 
     @keyframes meteor1_mob {
       0% {
-        bottom: 117vh;
+        bottom: getTrueVH(117);
         left: -27vw;
       }
       100% {
-        bottom: 6vh;
+        bottom: getTrueVH(6);
         left: 104vw;
       }
     }
     @keyframes meteor2_mob {
       0% {
-        bottom: 100vh;
+        bottom: getTrueVH(100);
         left: -9vw;
       }
       100% {
-        bottom: -11vh;
+        bottom: getTrueVH(-11);
         left: 122vw;
       }
     }
     @keyframes meteor3_mob {
       0% {
-        bottom: 117vh;
+        bottom: getTrueVH(117);
         left: -4vw;
       }
       100% {
-        bottom: 6vh;
+        bottom: getTrueVH(6);
         left: 127vw;
       }
     }
 
     .icon_container {
 
-      @include absoluteBody(80vw, 23vw, calc(100% - 60vh), 1vh, 17);
+      @include absoluteBody(80vw, 23vw, calc(100% - getTrueVH(60)), getTrueVH(1), 17);
       @extend %final_container;
 
       font-size: 4vw;
@@ -412,7 +414,7 @@ $windowBgColor: white;
 
     .kate_container {
 
-      @include absoluteBody(40vw, 14vw, 1vw, 35vh, 17);
+      @include absoluteBody(40vw, 14vw, 1vw, getTrueVH(35), 17);
       @extend %final_container;
 
       font-size: 4vw;
@@ -421,26 +423,26 @@ $windowBgColor: white;
 
     .text_container {
 
-      @include absoluteBody(50vw, 50vw, 1vw, 63vh, 17);
+      @include absoluteBody(50vw, 50vw, 1vw, getTrueVH(63), 17);
       @extend %final_container;
 
       font-size: 3vw;
       padding: 2vw;
       box-sizing: border-box;
       bottom: auto;
-      top: 1vh;
+      top: getTrueVH(1);
     }
 
     .rating_container {
 
-      @include absoluteBody(40vw, 40vw, 40vh, 50vh, 17);
+      @include absoluteBody(40vw, 40vw, getTrueVH(40), getTrueVH(50), 17);
       @extend %final_container;
 
       font-size: 2.4vw;
       padding: 1vw;
       bottom: auto;
       left: auto;
-      top: 3vh;
+      top: getTrueVH(3);
       right: 1vw;
       box-sizing: border-box;
     }

@@ -1,8 +1,8 @@
 @import "../../pages/MatrixScreen/MatrixScreen";
-
+@import "../../pages/BodyPage/BodyPage";
 
 .numberColumn {
   color: $mainThemeColor;
-  font-size: 1.8vh;
+  font-size: getTrueVH(1.8);
   font-family: Undertale, serif;
 }

@@ -2,7 +2,7 @@ import './StatsScreen.scss'
 import React, {Fragment, useEffect, useState} from "react";
 import MovingObjectContainer from "../../components/MovingObjectContainer/MovingObjectContainer";
 import heroAva from "../../assets/img/hero_ava.png";
-import {isMobile, isTooWideForStats} from "../../functions/mobile";
+import {isTooWideForStats} from "../../functions/mobile";
 import {MOVING_OBJECT_LIST} from "../../config/MovingObjectList";
 import {Swiper, SwiperSlide} from "swiper/react";
 import { Pagination, Navigation } from "swiper";
@@ -13,9 +13,11 @@ import "swiper/css/pagination";
 
 interface StatsScreenProps {
     isActive: boolean;
+    mobile: boolean;
+    wideScreen: boolean;
 }
 
-function StatsScreen({isActive}: StatsScreenProps) {
+function StatsScreen({isActive, mobile, wideScreen}: StatsScreenProps) {
 
     const [activeAnim, setActiveAnim] = useState(false);
     const [isUnlimited, setIsUnlimited] = useState(false);
@@ -43,14 +45,7 @@ function StatsScreen({isActive}: StatsScreenProps) {
 
     }, [changeChangeBlocked, currentChange, activeAnim, isUnlimited]);
 
-    const pagination = {
-        clickable: true,
-        renderBullet: function (index: number, className: string) {
-            return '<span class="' + className + '">' + (index + 1) + "</span>";
-        },
-    };
-
-    if (isMobile()) return (
+    if (mobile) return (
         <div className="StatsScreen">
             <div className="StatsContainer StatsContainer__mobile">
                 <div className="HeroContainer">
@@ -83,7 +78,7 @@ function StatsScreen({isActive}: StatsScreenProps) {
 
     return (
         <div className="StatsScreen">
-            <div className={isTooWideForStats() ? "StatsContainer StatsContainer__wide" : "StatsContainer"}>
+            <div className={wideScreen ? "StatsContainer StatsContainer__wide" : "StatsContainer"}>
                 <MovingObjectContainer isActive={activeAnim}/>
                 <div className="HeroContainer">
                     <img src={heroAva} className="HeroAva"/>
