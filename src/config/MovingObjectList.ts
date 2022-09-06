@@ -9,7 +9,7 @@ export const MOVING_OBJECT_LIST: MovingObjectEntity[] = [{
     moveSpeedX: MovingObject.MOVE_SPEED,
     moveSpeedY: MovingObject.MOVE_SPEED,
     title: 'SwordMastery',
-    desc: 'Ну да - я могу, и что? Ну да - я могу, и что? Ну да - я могу, и что? Ну да - я могу, и что? Ну да - я могу, и что? Ну да - я могу, и что? '
+    desc: 'Занимаюсь фехтованием примерно год, меня с детства тянуло к мечам, и это один из редких спортов что мне нравится'
 },{
     id: 1,
     width: 15,
@@ -19,7 +19,7 @@ export const MOVING_OBJECT_LIST: MovingObjectEntity[] = [{
     moveSpeedX: MovingObject.MOVE_SPEED,
     moveSpeedY: MovingObject.MOVE_SPEED,
     title: 'English',
-    desc: 'Ну да - я могу, и что? Ну да - я могу, и что? Ну да - я могу, и что? Ну да - я могу, и что? Ну да - я могу, и что? Ну да - я могу, и что? '
+    desc: 'Мой уровень - intermediate. Активно ищучаю уже два года, поступил в магистратуру на английский язык для бизнес-коммуникаций'
 },{
     id: 2,
     width: 15,
@@ -29,7 +29,7 @@ export const MOVING_OBJECT_LIST: MovingObjectEntity[] = [{
     moveSpeedX: MovingObject.MOVE_SPEED,
     moveSpeedY: MovingObject.MOVE_SPEED,
     title: 'Travels',
-    desc: 'Ну да - я могу, и что? Ну да - я могу, и что? Ну да - я могу, и что? Ну да - я могу, и что? Ну да - я могу, и что? Ну да - я могу, и что? '
+    desc: 'Люблю кататься по разным местам, люблю движ, когда-нибудь буду делать истории моих поездок (когда научусь фотографировать)'
 },{
     id: 3,
     width: 15,
@@ -39,7 +39,7 @@ export const MOVING_OBJECT_LIST: MovingObjectEntity[] = [{
     moveSpeedX: MovingObject.MOVE_SPEED,
     moveSpeedY: MovingObject.MOVE_SPEED,
     title: 'Games',
-    desc: 'Ну да - я могу, и что? Ну да - я могу, и что? Ну да - я могу, и что? Ну да - я могу, и что? Ну да - я могу, и что? Ну да - я могу, и что? '
+    desc: 'Да, признаюсь, я - гик, я прошел много игр, в основном мне либо нравятся быстрые экшены, либо вдумчивые головомки'
 },{
     id: 4,
     width: 15,
@@ -49,7 +49,7 @@ export const MOVING_OBJECT_LIST: MovingObjectEntity[] = [{
     moveSpeedX: MovingObject.MOVE_SPEED,
     moveSpeedY: MovingObject.MOVE_SPEED,
     title: 'Public',
-    desc: 'Ну да - я могу, и что? Ну да - я могу, и что? Ну да - я могу, и что? Ну да - я могу, и что? Ну да - я могу, и что? Ну да - я могу, и что? '
+    desc: 'Очень люблю выступать, шутить, выражаться через рот перед аудиторией, одно из новых увлечений, находится в разработке'
 },{
     id: 5,
     width: 15,
@@ -59,7 +59,7 @@ export const MOVING_OBJECT_LIST: MovingObjectEntity[] = [{
     moveSpeedX: MovingObject.MOVE_SPEED,
     moveSpeedY: MovingObject.MOVE_SPEED,
     title: 'Psycho',
-    desc: 'Ну да - я могу, и что? Ну да - я могу, и что? Ну да - я могу, и что? Ну да - я могу, и что? Ну да - я могу, и что? Ну да - я могу, и что? '
+    desc: 'Подсел на эту тему уже давно, просто нравится разбирать следить за некоторыми психологами, читать интересные мысли'
 },{
     id: 6,
     width: 15,
@@ -69,7 +69,7 @@ export const MOVING_OBJECT_LIST: MovingObjectEntity[] = [{
     moveSpeedX: -MovingObject.MOVE_SPEED,
     moveSpeedY: -MovingObject.MOVE_SPEED,
     title: 'Driving',
-    desc: 'Ну да - я могу, и что? Ну да - я могу, и что? Ну да - я могу, и что? Ну да - я могу, и что? Ну да - я могу, и что? Ну да - я могу, и что? '
+    desc: 'Просто люблю езду, водить классно, эдакий купол с музыкой, на котором просто куда-то ппасть'
 },{
     id: 7,
     width: 15,
@@ -79,5 +79,5 @@ export const MOVING_OBJECT_LIST: MovingObjectEntity[] = [{
     moveSpeedX: MovingObject.MOVE_SPEED,
     moveSpeedY: MovingObject.MOVE_SPEED,
     title: 'Design',
-    desc: 'Ну да - я могу, и что? Ну да - я могу, и что? Ну да - я могу, и что? Ну да - я могу, и что? Ну да - я могу, и что? Ну да - я могу, и что? '
+    desc: 'Этот сайт и есть моей попыткой дебютировать как дизайнер, я пока не понял что с этим делать и как реализовывать'
 }]

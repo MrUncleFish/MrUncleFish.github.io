@@ -49,6 +49,10 @@ $borderWidth: getTrueVH(.5);
     @extend %matrixTemplate;
   }
 
+  a {
+    text-decoration: none;
+  }
+
   .rowContent {
     display: flex;
     align-items: center;
@@ -120,7 +124,7 @@ $borderWidth: getTrueVH(.5);
       width: 80vw;
       height: getTrueVH(50);
       padding: 2vw;
-      font-size: calc(3.2vw + getTrueVH(2));
+      font-size: calc(2.4vw + getTrueVH(1.5));
     }
 
     .buttonColumn {

@@ -86,7 +86,7 @@ $animationBlurStart: 2s;
   .eye_form {
     fill: url(#Gradient1);
     stroke: url(#Gradient2);
-    stroke-width: $eyeBorderWidthPC;
+    stroke-width: $eyeBorderWidth;
     width: 100%;
     height: 100%;
   }
@@ -279,7 +279,7 @@ $animationBlurStart: 2s;
     }
 
     .eye_form {
-      stroke-width: $eyeBorderWidth;
+      stroke-width: $eyeBorderWidthPC;
     }
 
     .eye_entity {

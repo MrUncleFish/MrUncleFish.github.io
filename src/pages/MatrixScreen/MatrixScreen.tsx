@@ -30,17 +30,19 @@ function MatrixScreen({isActive} : MatrixScreenProps) {
 
             <div className="rowContent">
                 <div className="table">
-                    Тремболо
+                    Здесь представлены мои актуальные проекты, в которых я принимаю участие.<br/>
+                    Они не обязательно связаны с программированием, но они обязательно связаны со мной.<br/>
+                    Так что правило простое: чем больше тут кнопок, тем больше я сейчас реализуюсь как создатель.
                 </div>
                 <div className="buttonColumn">
-                    <div className="button">
+                    <a href="https://vk.com/murazorro" target="_blank"><div className="button">
                         <div className="button__title">Мой паблик</div>
                         <div className="button__role">Владелец</div>
-                    </div>
-                    <div className="button">
+                    </div></a>
+                    <a href="https://t.me/PremiumEngineTestBot" target="_blank"><div className="button">
                         <div className="button__title">Игра</div>
                         <div className="button__role">Frontend разработчик</div>
-                    </div>
+                    </div></a>
                 </div>
             </div>
 

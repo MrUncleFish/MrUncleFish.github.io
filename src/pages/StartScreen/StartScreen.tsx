@@ -19,7 +19,7 @@ function StartScreen() {
                     </div>
                     <div className="titleText second">
                         <div className="bg_closer__right"/>
-                        меня зовут Дядя Рыба
+                        меня зовут Александр
                     </div>
                 </div>
                 <div className="titleContainer__column">
