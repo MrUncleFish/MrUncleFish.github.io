@@ -17,12 +17,12 @@
 }
 
 .FloatContainer_block:hover {
-  border: 2px $blackColor solid;
+  border: $borderWidth $blackColor solid;
   color: $blackColor;
 }
 
 .FloatContainer_block:hover .FloatContainer_block__title {
-  border-bottom: 2px $blackColor solid;
+  border-bottom: $borderWidth $blackColor solid;
 }
 
 .FloatContainer_block__title {

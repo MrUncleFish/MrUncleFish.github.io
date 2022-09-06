@@ -14,17 +14,19 @@ $paddingBody: 2.5vw;
 $buttonSize: 3vw;
 $buttonSizeWide: getTrueVH(4.5);
 
+$borderWidth: .6vh;
+
 %FloatContainerStyle {
   background: transparent;
   border-radius: 10px;
-  border: 2px $mainColor solid;
+  border: $borderWidth $mainColor solid;
   box-sizing: border-box;
   font-family: KTFJermilovSolid;
   color: $mainColor;
 }
 
 %FloatContainerStyle .FloatContainer_block__title {
-  border-bottom: 2px $mainColor solid;
+  border-bottom: $borderWidth $mainColor solid;
   font-weight: bold;
   padding-left: 5%;
   position: relative;
@@ -51,7 +53,7 @@ $buttonSizeWide: getTrueVH(4.5);
 }
 
 .StatsContainer {
-  border: getTrueVH(.5) $mainColor solid;
+  border: $borderWidth $mainColor solid;
   border-radius: 3px;
   box-sizing: border-box;
   width: 95vw;
@@ -73,7 +75,7 @@ $buttonSizeWide: getTrueVH(4.5);
 .HeroAva {
   width: 12vw;
   height: 12vw;
-  border: 2px $mainColor solid;
+  border: $borderWidth $mainColor solid;
   margin-top: 5vw;
 }
 
@@ -93,7 +95,7 @@ $buttonSizeWide: getTrueVH(4.5);
   height: 2vw;
   width: 10vw;
   background: $blackColor;
-  border: 2px $mainColor solid;
+  border: $borderWidth $mainColor solid;
 
   position: relative;
   z-index: 1;
@@ -203,7 +205,7 @@ $buttonSizeWide: getTrueVH(4.5);
     width: getTrueVH(20);
     height: getTrueVH(20);
     margin-top: getTrueVH(5);
-    border: getTrueVH(.75) $mainColor solid;
+    border: $borderWidth $mainColor solid;
   }
 
   .HeroNick {
@@ -234,12 +236,12 @@ $buttonSizeWide: getTrueVH(4.5);
   .GalleryItem {
     @extend %FloatContainerStyle;
     height: 80%;
-    border: getTrueVH(.75) $mainColor solid;
+    border: $borderWidth $mainColor solid;
   }
 
   .GalleryItem .FloatContainer_block__title {
     font-size: 7vw;
-    border-bottom: getTrueVH(.75) $mainColor solid;
+    border-bottom: $borderWidth $mainColor solid;
   }
 
   .GalleryItem .FloatContainer_block__desc {

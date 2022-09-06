@@ -148,8 +148,7 @@ function FinalScreen({isActive, mobile} : FinalScreenProps) {
             <div className="rating_container">
                 <div className="text_left">
                     Технология проставления оценки:<br/>
-                    -наведите на слово;<br/>
-                    -зажмите левую кнопку мыши;<br/>
+                    {mobile ? <Fragment>-зажмите пальцем текст рейтинга;<br/></Fragment> : <Fragment>-наведите на слово;<br/>-зажмите левую кнопку мыши;<br/></Fragment>}
                     -передвигайте ползунок оценки;<br/>
                     -???<br/>
                     -PROFIT!

@@ -9,6 +9,10 @@ body::-webkit-scrollbar {
   touch-action: none;
 
   transition: top 1s;
+
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
 }
 
 .BodyPage__mobile {

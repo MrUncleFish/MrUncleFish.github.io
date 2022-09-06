@@ -5,6 +5,8 @@ $bgColor: rgba(0,0,255,.2);
 $windowBorderAndFontColor: black;
 $windowBgColor: white;
 
+$borderWidth: getTrueVH(.7);
+
 .FinalScreen {
   background: white;
   height: getTrueVH(100);
@@ -48,7 +50,7 @@ $windowBgColor: white;
 
   %final_container {
     background: $windowBgColor;
-    border: 3px $windowBorderAndFontColor solid;
+    border: $borderWidth $windowBorderAndFontColor solid;
     color: $windowBorderAndFontColor;
     border-radius: 10px;
     display: flex;

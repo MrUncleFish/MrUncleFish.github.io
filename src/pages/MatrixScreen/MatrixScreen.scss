@@ -2,6 +2,7 @@
 
 $mainThemeColor: darkgreen;
 $bgColor: black;
+$borderWidth: getTrueVH(.5);
 
 
 .ThirdScreen {
@@ -26,7 +27,7 @@ $bgColor: black;
 
   %matrixTemplate {
     box-shadow: 0px 0px 50px 0px $mainThemeColor;
-    border: 1px $mainThemeColor solid;
+    border: $borderWidth $mainThemeColor solid;
     border-radius: 10px;
     color: $mainThemeColor;
     background: $bgColor;
@@ -72,7 +73,7 @@ $bgColor: black;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    border: 1px $mainThemeColor solid;
+    border: $borderWidth $mainThemeColor solid;
     box-sizing: border-box;
 
     .button__title {
@@ -81,7 +82,8 @@ $bgColor: black;
       display: flex;
       align-items: center;
       justify-content: center;
-      border-right: 1px $mainThemeColor solid;
+      border-right: $borderWidth $mainThemeColor solid;
+      font-size: getTrueVH(4);
     }
 
     .button__role {
@@ -95,10 +97,10 @@ $bgColor: black;
   .button:hover {
     background: $mainThemeColor;
     color: $bgColor;
-    border: 1px $bgColor solid;
+    border: $borderWidth $bgColor solid;
 
     .button__title {
-      border-right: 1px $bgColor solid;
+      border-right: $borderWidth $bgColor solid;
     }
   }
 
