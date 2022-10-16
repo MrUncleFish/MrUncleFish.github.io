@@ -7,7 +7,7 @@ $windowBgColor: white;
 
 $borderWidth: getTrueVH(.7);
 
-.FinalScreen {
+.final_screen {
   background: white;
   height: getTrueVH(100);
   width: 100vw;
@@ -41,14 +41,14 @@ $borderWidth: getTrueVH(.7);
     height: getTrueVH(6);
     cursor: pointer;
   }
-  @mixin icon_mob($bg) {
+  @mixin iconMob($bg) {
     @include adaptiveBg($bg, 10vw, rgba(0,0,0,0), true);
 
     width: 10vw;
     height: 10vw;
   }
 
-  %final_container {
+  %finalContainer {
     background: $windowBgColor;
     border: $borderWidth $windowBorderAndFontColor solid;
     color: $windowBorderAndFontColor;
@@ -61,27 +61,27 @@ $borderWidth: getTrueVH(.7);
   }
 
 
-  .borderTop {
+  .border__top {
     @include adaptiveBg(url("../../assets/img/paint/border_top.png"), getTrueVH(9.5), $bgColor);
     @include absoluteBody(100vw, getTrueVH(5), 0, getTrueVH(95), 20);
   }
 
-  .borderLeft {
+  .border__left {
     @include adaptiveBg(url("../../assets/img/paint/border_left.png"), getTrueVH(5), $bgColor);
     @include absoluteBody(getTrueVH(5), getTrueVH(90), 0, getTrueVH(5), 20);
   }
 
-  .borderRight {
+  .border__right {
     @include adaptiveBg(url("../../assets/img/paint/border_right.png"), getTrueVH(5), $bgColor);
     @include absoluteBody(getTrueVH(5), getTrueVH(90), calc(100vw - getTrueVH(5)), getTrueVH(5), 20);
   }
 
-  .borderBottom {
+  .border__bottom {
     @include adaptiveBg(url("../../assets/img/paint/border_bottom.png"), getTrueVH(9.5), $bgColor);
     @include absoluteBody(100vw, getTrueVH(5), 0, 0, 20);
   }
 
-  .FinalScreen__content {
+  .final_screen__content {
     position: relative;
     overflow: hidden;
     width: calc(100vw - getTrueVH(10));
@@ -91,7 +91,6 @@ $borderWidth: getTrueVH(.7);
   }
 
   .grass {
-
     @include adaptiveBg(url("../../assets/img/paint/grass_v2.png"), getTrueVH(70));
     @include absoluteBody(calc(100vw - getTrueVH(10)), getTrueVH(22), 0, 0, 15);
   }
@@ -131,10 +130,10 @@ $borderWidth: getTrueVH(.7);
     @include absoluteBody(getTrueVH(30), getTrueVH(48.9), calc(68% - getTrueVH(30)), getTrueVH(13), 16);
   }
 
-  .icon_container {
+  .container__icon {
 
     @include absoluteBody(getTrueVH(30), getTrueVH(25), calc(100% - getTrueVH(60)), getTrueVH(1), 17);
-    @extend %final_container;
+    @extend %finalContainer;
 
     font-size: getTrueVH(4);
     left: auto;
@@ -142,19 +141,19 @@ $borderWidth: getTrueVH(.7);
     box-sizing: border-box;
   }
 
-  .kate_container {
+  .container__kate {
 
     @include absoluteBody(getTrueVH(20), getTrueVH(10), getTrueVH(1), getTrueVH(1), 17);
-    @extend %final_container;
+    @extend %finalContainer;
 
     font-size: getTrueVH(2);
     box-sizing: border-box;
   }
 
-  .text_container {
+  .container__text {
 
     @include absoluteBody(getTrueVH(35), getTrueVH(35), getTrueVH(1), getTrueVH(63), 17);
-    @extend %final_container;
+    @extend %finalContainer;
 
     font-size: getTrueVH(1.8);
     padding: getTrueVH(2);
@@ -163,10 +162,10 @@ $borderWidth: getTrueVH(.7);
     top: getTrueVH(3);
   }
 
-  .rating_container {
+  .container__rating {
 
     @include absoluteBody(getTrueVH(28), getTrueVH(28), getTrueVH(40), getTrueVH(50), 17);
-    @extend %final_container;
+    @extend %finalContainer;
 
     font-size: getTrueVH(1.5);
     padding: getTrueVH(1);
@@ -186,7 +185,7 @@ $borderWidth: getTrueVH(.7);
     user-select: none;
   }
 
-  .kate_container a {
+  .container__kate a {
 
     color: $refColor;
     font-weight: bold;
@@ -217,7 +216,7 @@ $borderWidth: getTrueVH(.7);
     @include icon(url("../../assets/img/paint/gmail.png"));
   }
 
-  .row {
+  .skill_list__container {
     display: flex;
     justify-content: space-around;
     width: 70%;
@@ -269,27 +268,27 @@ $borderWidth: getTrueVH(.7);
 
   @media all and (orientation: portrait) {
 
-    .borderTop {
+    .border__top {
       @include adaptiveBg(url("../../assets/img/paint/border_top.png"), getTrueVH(4), rgba(0,0,255,.2));
       @include absoluteBody(100vw, getTrueVH(2), 0, getTrueVH(98), 20);
     }
 
-    .borderLeft {
+    .border__left {
       @include adaptiveBg(url("../../assets/img/paint/border_left.png"), 1.9vw, rgba(0,0,255,.2));
       @include absoluteBody(2vw, getTrueVH(96), 0, getTrueVH(2), 20);
     }
 
-    .borderRight {
+    .border__right {
       @include adaptiveBg(url("../../assets/img/paint/border_right.png"), 3.5vw, rgba(0,0,255,.2));
       @include absoluteBody(2vw, getTrueVH(96), calc(100vw - 2vw), getTrueVH(2), 20);
     }
 
-    .borderBottom {
+    .border__bottom {
       @include adaptiveBg(url("../../assets/img/paint/border_bottom.png"), getTrueVH(3.5), rgba(0,0,255,.2));
       @include absoluteBody(100vw, getTrueVH(2), 0, 0, 20);
     }
 
-    .FinalScreen__content {
+    .final_screen__content {
       width: 96vw;
       height: getTrueVH(96);
       left: 2vw;
@@ -380,10 +379,10 @@ $borderWidth: getTrueVH(.7);
       }
     }
 
-    .icon_container {
+    .container__icon {
 
       @include absoluteBody(80vw, 23vw, calc(100% - getTrueVH(60)), getTrueVH(1), 17);
-      @extend %final_container;
+      @extend %finalContainer;
 
       font-size: 4vw;
       left: auto;
@@ -391,42 +390,42 @@ $borderWidth: getTrueVH(.7);
       box-sizing: border-box;
     }
 
-    .row {
+    .skill_list__container {
       width: 90%;
     }
 
     .inst_icon {
-      @include icon_mob(url("../../assets/img/paint/inst.png"));
+      @include iconMob(url("../../assets/img/paint/inst.png"));
     }
     .vk_icon {
-      @include icon_mob(url("../../assets/img/paint/vk.png"));
+      @include iconMob(url("../../assets/img/paint/vk.png"));
     }
     .tg_icon {
-      @include icon_mob(url("../../assets/img/paint/tg.png"));
+      @include iconMob(url("../../assets/img/paint/tg.png"));
     }
     .gh_icon {
-      @include icon_mob(url("../../assets/img/paint/github.png"));
+      @include iconMob(url("../../assets/img/paint/github.png"));
     }
     .gl_icon {
-      @include icon_mob(url("../../assets/img/paint/gitlab.png"));
+      @include iconMob(url("../../assets/img/paint/gitlab.png"));
     }
     .gm_icon {
-      @include icon_mob(url("../../assets/img/paint/gmail.png"));
+      @include iconMob(url("../../assets/img/paint/gmail.png"));
     }
 
-    .kate_container {
+    .container__kate {
 
       @include absoluteBody(40vw, 14vw, 1vw, getTrueVH(35), 17);
-      @extend %final_container;
+      @extend %finalContainer;
 
       font-size: 4vw;
       box-sizing: border-box;
     }
 
-    .text_container {
+    .container__text {
 
       @include absoluteBody(50vw, 50vw, 1vw, getTrueVH(63), 17);
-      @extend %final_container;
+      @extend %finalContainer;
 
       font-size: 3vw;
       padding: 2vw;
@@ -435,10 +434,10 @@ $borderWidth: getTrueVH(.7);
       top: getTrueVH(1);
     }
 
-    .rating_container {
+    .container__rating {
 
       @include absoluteBody(40vw, 40vw, getTrueVH(40), getTrueVH(50), 17);
-      @extend %final_container;
+      @extend %finalContainer;
 
       font-size: 2.4vw;
       padding: 1vw;

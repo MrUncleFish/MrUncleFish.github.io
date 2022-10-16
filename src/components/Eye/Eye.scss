@@ -1,0 +1,123 @@
+@import "../../pages/StartScreen/StartScreen";
+
+.eye_entity {
+  position: absolute;
+  width: $eyeWidth * 1.45;
+  height: $eyeWidth;
+  margin-top: $eyeMarginTop;
+  display: flex;
+  z-index: 3;
+}
+
+.eye_entity__container {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.eye_svg {
+  margin-top: $eyeMarginTop;
+  width: 100vw;
+  height: $eyeWidth;
+}
+
+.eye_form {
+  fill: url(#Gradient1);
+  stroke: url(#Gradient2);
+  stroke-width: $eyeBorderWidth;
+  width: 100%;
+  height: 100%;
+}
+
+.g1-stop1 {
+  stop-color: $leftDarkPartBgColor;
+}
+
+.g1-stop2 {
+  stop-color: $rightBrightPartBgColor;
+}
+
+.g2-stop1 {
+  stop-color: $rightBrightPartBgColor;
+}
+
+.g2-stop2 {
+  stop-color: $leftDarkPartBgColor;
+}
+
+
+@mixin eyeEntry($bgColor) {
+  border-radius: 100%;
+
+  position: absolute;
+  top: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $bgColor;
+
+  transition: left 1s, top 1s, right 1s;
+
+  width: calc($eyeWidth / 4);
+  height: calc($eyeWidth / 4);
+  left: calc($eyeWidth * 1.45 / 2) - calc($eyeWidth / 10);
+
+  @media all and (orientation: landscape) {
+    width: calc($eyeWidthPC / 4);
+    height: calc($eyeWidthPC / 4);
+  }
+}
+
+@mixin eyeEntryDiv($bgColor) {
+  position: relative;
+  background: $leftDarkPartBgColor;
+  border-radius: 100%;
+  background: $bgColor;
+  width: calc($eyeWidth / 8);
+  height: calc($eyeWidth / 8);
+
+  @media all and (orientation: landscape) {
+    width: calc($eyeWidthPC / 8);
+    height: calc($eyeWidthPC / 8);
+  }
+}
+
+.eye_entry {
+  @include eyeEntry($rightBrightPartBgColor);
+}
+
+.eye_entry_r {
+  @include eyeEntry($leftDarkPartBgColor);
+  left: auto;
+}
+
+.eye_entry div {
+  @include eyeEntryDiv($leftDarkPartBgColor);
+}
+
+.eye_entry_r div {
+  @include eyeEntryDiv($rightBrightPartBgColor);
+}
+
+@media all and (orientation: landscape) {
+
+  .eye_svg {
+    margin-top: $eyeMarginTopPC;
+    width: 100vw;
+    height: $eyeWidthPC;
+  }
+
+  .eye_form {
+    stroke-width: $eyeBorderWidthPC;
+  }
+
+  .eye_entity {
+    position: absolute;
+    width: calc($eyeWidthPC * 1.45);
+    height: $eyeWidthPC;
+    margin-top: $eyeMarginTopPC;
+    display: flex;
+    z-index: 3;
+  }
+}

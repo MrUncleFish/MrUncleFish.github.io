@@ -1,14 +1,14 @@
 @import "../../pages/StatsScreen/StatsScreen";
 @import "../../pages/BodyPage/BodyPage";
 
-.FloatContainer {
+.float_container {
   height: 100%;
   width: 80%;
   background: $bgColorBlocks;
   position: relative;
 }
 
-.FloatContainer_block {
+.float_container__block {
   position: absolute;
   transition: top .2s, right .2s, bottom .2s, left .2s;
   cursor: pointer;
@@ -16,34 +16,34 @@
   @extend %FloatContainerStyle;
 }
 
-.FloatContainer_block:hover {
+.float_container__block:hover {
   border: $borderWidth $blackColor solid;
   color: $blackColor;
 }
 
-.FloatContainer_block:hover .FloatContainer_block__title {
+.float_container__block:hover .float_container__block_title {
   border-bottom: $borderWidth $blackColor solid;
 }
 
-.FloatContainer_block__title {
+.float_container__block_title {
   width: 95%;
   height: 20%;
   font-size: 1.4vw;
 }
 
-.FloatContainer_block__desc {
+.float_container__block_desc {
 
   font-size: .8vw;
 }
 
-.StatsContainer__wide {
+.stats_container__wide {
 
 
-  .FloatContainer_block__title {
+  .float_container__block_title {
     font-size: getTrueVH(2.3);
   }
 
-  .FloatContainer_block__desc {
+  .float_container__block_desc {
     font-size: getTrueVH(1.5);
   }
 

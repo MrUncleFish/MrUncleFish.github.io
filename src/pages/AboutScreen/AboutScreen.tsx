@@ -17,10 +17,8 @@ interface AboutScreenProps {
 
 function AboutScreen({isActive} : AboutScreenProps) {
 
-    // html css sass js reactjs php c# ts огу образование
     return (
-
-        <div className="SecondScreen">
+        <div className="second_screen">
             <div>
                 <div className="top_space"/>
                 <MovingTitle isActive={isActive}>давайте знакомиться!</MovingTitle>
@@ -36,15 +34,13 @@ function AboutScreen({isActive} : AboutScreenProps) {
                     выходить на новые горизонты.
                 </div>
             </div>
-
-            <div className="row">
-                <div className="SkillList">
+            <div className="skill_list__container">
+                <div className="skill_list">
                     <SkillContainer title="HTML+CSS/SASS">знаком непонаслышке с адаптивной версткой, сверстал множество кроссплатформенных приложений</SkillContainer>
                     <SkillContainer title="JS/TS + React">Имею опыт решения разнообразных задач, разработал много адаптивных механик (кликеры, мини-игры, карты и т.д.)</SkillContainer>
                     <SkillContainer title="Backend(PHP/C#)">Имею и такой опыт, в основном любительский, много работал в связке с бекендерами</SkillContainer>
                 </div>
             </div>
-
             <div className="logo_container__body">
                 <div className="logo_container">
                     <img alt="" className="csharp_logo" src={csharp_logo}/>
@@ -56,8 +52,6 @@ function AboutScreen({isActive} : AboutScreenProps) {
                     <img alt="" className="php_logo" src={php_logo}/>
                 </div>
             </div>
-
-
         </div>
     )
 }

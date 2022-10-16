@@ -24,17 +24,17 @@ function MatrixScreen({isActive} : MatrixScreenProps) {
 
     return (
         <div className="ThirdScreen">
-            <div className="row">
+            <div className="skill_list__container">
                 {randomNumbers.slice(0, maxCountNumbers).map((value, index) =>  <RandomNumberColumn key={index} length={value}/>)}
             </div>
 
-            <div className="rowContent">
+            <div className="row_сontent">
                 <div className="table">
                     Здесь представлены мои актуальные проекты, в которых я принимаю участие.<br/>
                     Они не обязательно связаны с программированием, но они обязательно связаны со мной.<br/>
                     Так что правило простое: чем больше тут кнопок, тем больше я сейчас реализуюсь как создатель.
                 </div>
-                <div className="buttonColumn">
+                <div className="button_сolumn">
                     <a href="https://vk.com/murazorro" target="_blank"><div className="button">
                         <div className="button__title">Мой паблик</div>
                         <div className="button__role">Владелец</div>

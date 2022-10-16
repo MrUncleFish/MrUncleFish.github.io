@@ -25,7 +25,7 @@ $borderWidth: .6vh;
   color: $mainColor;
 }
 
-%FloatContainerStyle .FloatContainer_block__title {
+%FloatContainerStyle .float_container__block_title {
   border-bottom: $borderWidth $mainColor solid;
   font-weight: bold;
   padding-left: 5%;
@@ -35,11 +35,11 @@ $borderWidth: .6vh;
   justify-content: left;
 }
 
-%FloatContainerStyle .FloatContainer_block__desc {
+%FloatContainerStyle .float_container__block_desc {
   padding: 5%;
 };
 
-.StatsScreen {
+.stats__screen {
   display: flex;
   flex-direction: column;
   background: $bgColor;
@@ -52,7 +52,7 @@ $borderWidth: .6vh;
   font-family: KTFJermilovSolid;
 }
 
-.StatsContainer {
+.stats__container {
   border: $borderWidth $mainColor solid;
   border-radius: 3px;
   box-sizing: border-box;
@@ -63,7 +63,7 @@ $borderWidth: .6vh;
   box-shadow: 2px 2px 20px $mainColor;
 }
 
-.HeroContainer {
+.hero__container {
   height: 100%;
   width: 20%;
   display: flex;
@@ -72,19 +72,19 @@ $borderWidth: .6vh;
   text-align: center;
 }
 
-.HeroAva {
+.hero__ava {
   width: 12vw;
   height: 12vw;
   border: $borderWidth $mainColor solid;
   margin-top: 5vw;
 }
 
-.HeroNick {
+.hero__nick {
   color: $mainColor;
   font-size: 3vw;
 }
 
-.HeroChangeName {
+.hero__change_name {
   color: $mainColor;
   font-size: 2vw;
 
@@ -114,7 +114,7 @@ $borderWidth: .6vh;
   transition: left .5s;
 }
 
-.activate_button {
+.button__activate {
   border-radius: 30px;
   background: $greenColor;
   color: $mainColor;
@@ -129,18 +129,18 @@ $borderWidth: .6vh;
   cursor: pointer;
 }
 
-.deactivated {
+.button__deactivated {
   background: $redColor;
 }
 
-.HeroDesc {
+.hero__desc {
   color: $mainColor;
   font-size: 1vw;
   text-align: left;
   padding: 0 1vw;
 }
 
-.secret_desc {
+.secret__desc {
   color: $blackColor;
   font-size: 1.5vw;
   flex-grow: 1;
@@ -148,27 +148,27 @@ $borderWidth: .6vh;
   align-items: flex-end;
 }
 
-.StatsContainer__wide {
+.stats_container__wide {
   width: getTrueVH(164);
   height: getTrueVH(95);
 
-  .HeroAva {
+  .hero__ava {
     width: getTrueVH(20);
     height: getTrueVH(20);
     margin-top: getTrueVH(5);
   }
 
-  .HeroNick {
+  .hero__nick {
     color: $mainColor;
     font-size: getTrueVH(5);
   }
 
-  .HeroDesc {
+  .hero__desc {
     font-size: getTrueVH(2);
     padding: 0 getTrueVH(1);
   }
 
-  .HeroChangeName {
+  .hero__change_name {
     font-size: getTrueVH(2.5);
     margin-top: getTrueVH(2);
   }
@@ -178,73 +178,73 @@ $borderWidth: .6vh;
     width: getTrueVH(13);
   }
 
-  .activate_button {
+  .button__activate {
     width: calc($buttonSizeWide * 4);
     height: $buttonSizeWide;
     font-size: calc($buttonSizeWide / 2);
     margin-top: getTrueVH(2);
   }
 
-  .secret_desc {
+  .secret__desc {
     font-size: getTrueVH(2.5);
   }
 }
 
-.StatsContainer__mobile {
+.stats_container__mobile {
   width: 100vw;
   height: getTrueVH(100);
   flex-direction: column;
   align-items: center;
   position: relative;
 
-  .HeroContainer {
+  .hero__container {
     height: getTrueVH(45);
   }
 
-  .HeroAva {
+  .hero__ava {
     width: getTrueVH(20);
     height: getTrueVH(20);
     margin-top: getTrueVH(5);
     border: $borderWidth $mainColor solid;
   }
 
-  .HeroNick {
+  .hero__nick {
     font-size: getTrueVH(5);
   }
 
-  .HeroDesc {
+  .hero__desc {
     font-size: getTrueVH(2);
     text-align: center;
     width: 80vw;
     padding: 0;
   }
 
-  .GalleryContainer {
+  .gallery_container {
     height: getTrueVH(55);
     width: 100vw;
   }
 
-  .GalleryContainer::-webkit-scrollbar {
+  .gallery_container::-webkit-scrollbar {
     width: 0;
   }
 
-  .GalleryCounter {
+  .gallery_counter {
     font-size: getTrueVH(3);
     color: $mainColor;
   }
 
-  .GalleryItem {
+  .gallery_item {
     @extend %FloatContainerStyle;
     height: 80%;
     border: $borderWidth $mainColor solid;
   }
 
-  .GalleryItem .FloatContainer_block__title {
+  .gallery_item .float_container__block_title {
     font-size: 7vw;
     border-bottom: $borderWidth $mainColor solid;
   }
 
-  .GalleryItem .FloatContainer_block__desc {
+  .gallery_item .float_container__block_desc {
     width: 60vw!important;
     font-size: 4.5vw;
     padding: 1vw 5vw 1vw 2vw;

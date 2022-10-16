@@ -36,11 +36,11 @@ const MovingObjectContainer: FC<MovingObjectContainerProps> = ({isActive}) => {
 
 
     return (
-        <div className="FloatContainer">
+        <div className="float_container">
             {pos.map((item, index) =>
-                <div onMouseEnter={() => blockObject(item.id)} onMouseLeave={() => blockObject(-1)} key={index} className="FloatContainer_block" style={{width: item.width + '%', height: item.height + '%', bottom: item.positionY + '%', left: item.positionX + '%'}}>
-                    <div className="FloatContainer_block__title">{item.title}</div>
-                    <div className="FloatContainer_block__desc">{item.desc}</div>
+                <div onMouseEnter={() => blockObject(item.id)} onMouseLeave={() => blockObject(-1)} key={index} className="float_container__block" style={{width: item.width + '%', height: item.height + '%', bottom: item.positionY + '%', left: item.positionX + '%'}}>
+                    <div className="float_container__block_title">{item.title}</div>
+                    <div className="float_container__block_desc">{item.desc}</div>
                 </div>)}
         </div>
     )

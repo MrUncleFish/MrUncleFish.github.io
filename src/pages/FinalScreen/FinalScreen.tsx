@@ -12,7 +12,6 @@ import sun1 from "../../assets/img/paint/sun-1.png";
 import sun2 from "../../assets/img/paint/sun-2.png";
 import sun3 from "../../assets/img/paint/sun-3.png";
 
-
 import tree from "../../assets/img/paint/tree.png";
 import tree2 from "../../assets/img/paint/tree_1.png";
 
@@ -89,14 +88,14 @@ function FinalScreen({isActive, mobile} : FinalScreenProps) {
         setRatingWidth(result);
     }
 
-    return <div className="FinalScreen">
-        <div className="borderTop"/>
-        <div className="borderLeft"/>
-        <div className="borderRight"/>
-        <div className="borderBottom"/>
+    return <div className="final_screen">
+        <div className="border__top"/>
+        <div className="border__left"/>
+        <div className="border__right"/>
+        <div className="border__bottom"/>
 
 
-        <div className="FinalScreen__content">
+        <div className="final_screen__content">
             <div className="grass"/>
             <div className="sky"/>
             <div className="home"/>
@@ -109,10 +108,10 @@ function FinalScreen({isActive, mobile} : FinalScreenProps) {
             <img src={tree} className="tree"/>
             <img src={tree2} className="tree2"/>
 
-           <div className="icon_container">
+           <div className="container__icon">
                 <div className="icon_title">Мои соцсети:</div>
                {mobile
-                   ? <div className="row">
+                   ? <div className="skill_list__container">
                        <a href="https://vk.com/id171138541" target="_blank"><div className="vk_icon"/></a>
                        <a href="https://t.me/FarmStreet" target="_blank"><div className="tg_icon"/></a>
                        <a href="https://www.instagram.com/key_lord20/" target="_blank"><div className="inst_icon"/></a>
@@ -120,29 +119,29 @@ function FinalScreen({isActive, mobile} : FinalScreenProps) {
                        <a href="mailto:alex2000mn@gmail.com?subject=Приветствую%20Александра" target="_blank"><div className="gm_icon"/></a>
                        <a href="https://github.com/FarmStreet" target="_blank"><div className="gh_icon"/></a>
                    </div>
-                   : <Fragment><div className="row">
+                   : <Fragment><div className="skill_list__container">
                    <a href="https://vk.com/id171138541" target="_blank"><div className="vk_icon"/></a>
                    <a href="https://t.me/FarmStreet" target="_blank"><div className="tg_icon"/></a>
                    <a href="https://www.instagram.com/key_lord20/" target="_blank"><div className="inst_icon"/></a>
                 </div>
-                <div className="row">
+                <div className="skill_list__container">
                    <a href="https://gitlab.com/alex2000mn" target="_blank"><div className="gl_icon"/></a>
                    <a href="mailto:alex2000mn@gmail.com?subject=Приветствую%20Александра" target="_blank"><div className="gm_icon"/></a>
                    <a href="https://github.com/FarmStreet" target="_blank"><div className="gh_icon"/></a>
                 </div></Fragment>}
             </div>
 
-            <div className="kate_container">
+            <div className="container__kate">
                 <span>За рисунки спасибо <a href="https://vk.com/id119792781" target="_blank">KATE</a></span>
             </div>
 
-            <div className="text_container">
+            <div className="container__text">
                 Вот и всё, конечная страница. И что остаётся в конце? Возможно, вам захочется связаться со мной,
                 или просто посмотреть на меня соц сетях, и как раз для этого вы можете протыкать прекрасный список
                 соц сетей, или же поставить оценку сайту с помощью слова-ползунка, он будет благодарен.
             </div>
 
-            <div className="rating_container">
+            <div className="container__rating">
                 <div className="text_left">
                     Технология проставления оценки:<br/>
                     {mobile ? <Fragment>-зажмите пальцем текст рейтинга;<br/></Fragment> : <Fragment>-наведите на слово;<br/>-зажмите левую кнопку мыши;<br/></Fragment>}

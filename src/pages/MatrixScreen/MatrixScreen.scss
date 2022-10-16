@@ -7,7 +7,6 @@ $borderWidth: getTrueVH(.5);
 
 .ThirdScreen {
 
-  // overflow hidden везде
   overflow: hidden;
   background: $bgColor;
   height: getTrueVH(100);
@@ -17,7 +16,7 @@ $borderWidth: getTrueVH(.5);
   display: flex;
   justify-content: center;
 
-  .row {
+  .skill_list__container {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -53,7 +52,7 @@ $borderWidth: getTrueVH(.5);
     text-decoration: none;
   }
 
-  .rowContent {
+  .row_сontent {
     display: flex;
     align-items: center;
     height: getTrueVH(100);
@@ -61,7 +60,7 @@ $borderWidth: getTrueVH(.5);
     width: getTrueVH(150);
   }
 
-  .buttonColumn {
+  .button_сolumn {
     height: getTrueVH(60);
     display: flex;
     flex-direction: column;
@@ -110,7 +109,7 @@ $borderWidth: getTrueVH(.5);
 
   @media all and (orientation: portrait) {
 
-    .rowContent {
+    .row_сontent {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -127,7 +126,7 @@ $borderWidth: getTrueVH(.5);
       font-size: calc(2.4vw + getTrueVH(1.5));
     }
 
-    .buttonColumn {
+    .button_сolumn {
       height: getTrueVH(50);
     }
 

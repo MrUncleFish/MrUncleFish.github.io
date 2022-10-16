@@ -5,29 +5,29 @@ function StartScreen() {
 
     return (
 
-        <div className="StartScreen">
+        <div className="start_screen">
 
-            <div className="StartScreen__fon"/>
+            <div className="bg-blur"/>
 
             <Eye/>
 
-            <div className="titleContainer">
-                <div className="titleContainer__column">
-                    <div className="titleText first">
+            <div className="title_container">
+                <div className="title_container__column">
+                    <div className="title_text first">
                         <div className="bg_closer__right"/>
                         Приветствую!
                     </div>
-                    <div className="titleText second">
+                    <div className="title_text second">
                         <div className="bg_closer__right"/>
                         меня зовут Александр
                     </div>
                 </div>
-                <div className="titleContainer__column">
-                    <div className="titleText third">
+                <div className="title_container__column">
+                    <div className="title_text third">
                         <div className="bg_closer__right"/>
                         и я уже давно
                     </div>
-                    <div className="titleText fourth">
+                    <div className="title_text fourth">
                         <div className="bg_closer__right"/>
                         Frontend-разработчик
                     </div>

@@ -2,7 +2,7 @@ body::-webkit-scrollbar {
   width: 0;
 }
 
-.BodyPage {
+.body_page {
   overflow: hidden;
   position: absolute;
   top: -0%;
@@ -15,7 +15,7 @@ body::-webkit-scrollbar {
   user-select: none;
 }
 
-.BodyPage__mobile {
+.body_page__mobile {
   width: 100vw;
   height: calc(var(--vh, 1vh) * 100);
 }

@@ -1,11 +1,10 @@
 import './StatsScreen.scss'
-import React, {Fragment, useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import MovingObjectContainer from "../../components/MovingObjectContainer/MovingObjectContainer";
 import heroAva from "../../assets/img/hero_ava.jpg";
-import {isTooWideForStats} from "../../functions/mobile";
 import {MOVING_OBJECT_LIST} from "../../config/MovingObjectList";
 import {Swiper, SwiperSlide} from "swiper/react";
-import { Pagination, Navigation } from "swiper";
+import { Pagination } from "swiper";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -26,8 +25,6 @@ function StatsScreen({isActive, mobile, wideScreen}: StatsScreenProps) {
 
     useEffect(() => {
 
-        console.log(10);
-
         if (currentChange <= 0 && !isUnlimited && activeAnim) {
             setActiveAnim(false);
             return;
@@ -46,13 +43,13 @@ function StatsScreen({isActive, mobile, wideScreen}: StatsScreenProps) {
     }, [changeChangeBlocked, currentChange, activeAnim, isUnlimited]);
 
     if (mobile) return (
-        <div className="StatsScreen">
-            <div className="StatsContainer StatsContainer__mobile">
-                <div className="HeroContainer">
-                    <img src={heroAva} className="HeroAva"/>
-                    <div className="HeroNick">@KeyLord</div>
+        <div className="stats__screen">
+            <div className="stats__container stats_container__mobile">
+                <div className="hero__container">
+                    <img src={heroAva} className="hero__ava"/>
+                    <div className="hero__nick">@KeyLord</div>
                     <div>
-                        <div className="HeroDesc">
+                        <div className="hero__desc">
                             Эта страница - кладезь некоторых моих увлечений/умений/etc!
                         </div>
                     </div>
@@ -66,10 +63,10 @@ function StatsScreen({isActive, mobile, wideScreen}: StatsScreenProps) {
                     }}
                     centeredSlides={true}
                     modules={[Pagination]}
-                    className="GalleryContainer">
-                    {MOVING_OBJECT_LIST.map((item) => <SwiperSlide key={item.id} className="GalleryItem">
-                        <div className="FloatContainer_block__title">{item.title}</div>
-                        <div className="FloatContainer_block__desc">{item.desc}</div>
+                    className="gallery_container">
+                    {MOVING_OBJECT_LIST.map((item) => <SwiperSlide key={item.id} className="gallery_item">
+                        <div className="float_container__block_title">{item.title}</div>
+                        <div className="float_container__block_desc">{item.desc}</div>
                     </SwiperSlide>)}
                 </Swiper>
             </div>
@@ -77,14 +74,14 @@ function StatsScreen({isActive, mobile, wideScreen}: StatsScreenProps) {
     )
 
     return (
-        <div className="StatsScreen">
-            <div className={wideScreen ? "StatsContainer StatsContainer__wide" : "StatsContainer"}>
+        <div className="stats__screen">
+            <div className={wideScreen ? "stats__container stats_container__wide" : "stats__container"}>
                 <MovingObjectContainer isActive={activeAnim}/>
-                <div className="HeroContainer">
-                    <img src={heroAva} className="HeroAva"/>
-                    <div className="HeroNick">@KeyLord</div>
+                <div className="hero__container">
+                    <img src={heroAva} className="hero__ava"/>
+                    <div className="hero__nick">@KeyLord</div>
 
-                    <div className="HeroDesc">
+                    <div className="hero__desc">
                         Эта страница - кладезь некоторых моих увлечений/умений/etc! Вы можете включить анимацию
                         передвижения этих карточек, нажав на кнопку снизу, но будьте внимательны, заряд может
                         истощиться!
@@ -92,7 +89,7 @@ function StatsScreen({isActive, mobile, wideScreen}: StatsScreenProps) {
                         вы можете навести курсор на карточку и остановить её.
                     </div>
 
-                    <div className="HeroChangeName">Заряд анимации</div>
+                    <div className="hero__change_name">Заряд анимации</div>
 
                     <div className="battery">
                         <div className="battery__charge" style={{left: currentChange - 100 + '%'}}/>
@@ -100,11 +97,11 @@ function StatsScreen({isActive, mobile, wideScreen}: StatsScreenProps) {
 
                     {activeAnim
                         ? <div onClick={() => setActiveAnim(false)}
-                               className="activate_button deactivated">отключить</div>
+                               className="button__activate button__deactivated">отключить</div>
                         : <div onClick={() => (currentChange > 0 || isUnlimited) && setActiveAnim(true)}
-                               className="activate_button">активировать</div>}
+                               className="button__activate">активировать</div>}
 
-                    {isUnlimited && <div className="secret_desc">// бесконечный заряд</div>}
+                    {isUnlimited && <div className="secret__desc">// бесконечный заряд</div>}
                 </div>
             </div>
         </div>

@@ -38,8 +38,6 @@ const Eye: FC<EyeProps> = () => {
 
     }, [eyeCoord]);
 
-
-
     return (
         <Fragment>
             <svg className="eye_svg" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 33 50 34">

@@ -40,8 +40,6 @@ function BodyPage() {
 
         const vh = window.innerHeight * 0.01;
         document.documentElement.style.setProperty('--vh', `${vh}px`);
-
-        console.log('config');
     }
 
     const wheelHandler = (e: React.WheelEvent) => {
@@ -67,14 +65,14 @@ function BodyPage() {
     }
 
     if (mobile) return (
-        <Swiper initialSlide={page} direction={"vertical"} className="BodyPage__mobile" onSlideChange={(e) => setPage(e.realIndex)}>
+        <Swiper initialSlide={page} direction={"vertical"} className="body_page__mobile" onSlideChange={(e) => setPage(e.realIndex)}>
             {pages.map((e, id) => <SwiperSlide key={id}>{e}</SwiperSlide>)}
         </Swiper>
     )
 
     return (
         <div onKeyDown={keyPressHandler} tabIndex={0} onKeyUp={keyPressHandler} onWheel={wheelHandler}
-             className="BodyPage" style={{top: '-' + (page * 100) + '%'}}>
+             className="body_page" style={{top: '-' + (page * 100) + '%'}}>
             <ScrollHandler/>
             {pages.map((e, id) => <div key={id}>{e}</div>)}
         </div>

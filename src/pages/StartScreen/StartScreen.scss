@@ -28,273 +28,154 @@ $titleWidthPC: getTrueVH(100);
 
 $animationBlurStart: 2s;
 
-.StartScreen {
+.start_screen {
   display: flex;
   flex-direction: column;
   background: $superColor;
   height: getTrueVH(100);
   align-items: center;
   position: relative;
+}
 
-  .StartScreen__fon {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: getTrueVH(100);
-    z-index: 5;
-    background: black;
+.bg-blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: getTrueVH(100);
+  z-index: 5;
+  background: black;
 
+  opacity: 1;
+
+  animation: $animationBlurStart ease-out anim_bg-blur__hide;
+  animation-fill-mode: forwards;
+}
+
+@keyframes anim_bg-blur__hide {
+  from {
     opacity: 1;
-
-    animation: $animationBlurStart ease-out bgBlurHide;
-    animation-fill-mode: forwards;
   }
-
-  @keyframes bgBlurHide {
-    from {
-      opacity: 1;
-    }
-    to {
-      opacity: 0;
-      display: none;
-    }
+  to {
+    opacity: 0;
+    display: none;
   }
+}
 
-  .eye_entity {
-    position: absolute;
-    width: $eyeWidth * 1.45;
-    height: $eyeWidth;
-    margin-top: $eyeMarginTop;
-    display: flex;
-    z-index: 3;
-  }
+.title_container {
+  display: flex;
+  flex-direction: row;
+  font-family: Undertale, serif;
+  font-size: $titleFontSize;
 
-  .eye_entity__container {
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
-    position: relative;
-  }
+  width: $titleWidth;
 
-  .eye_svg {
-    margin-top: $eyeMarginTop;
-    width: 100vw;
-    height: $eyeWidth;
-  }
+  flex-grow: 1;
+  align-items: flex-end;
+}
 
-  .eye_form {
-    fill: url(#Gradient1);
-    stroke: url(#Gradient2);
-    stroke-width: $eyeBorderWidth;
+.title_container__column {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 50vw;
+
+  align-items: center;
+  margin-bottom: $titleMarginBottom;
+}
+
+.title_text {
+  position: relative;
+}
+
+.title_text.first {
+
+  background: $leftDarkPartBgColor;
+  color: $rightBrightPartBgColor;
+
+  padding-left: .5vw;
+}
+
+.title_text.second {
+
+  background: $rightBrightPartBgColor;
+  color: $leftDarkPartBgColor;
+
+  margin-top: $titleMarginBetweenText;
+  padding: 1vw;
+
+  transform: rotate($titleRotate);
+}
+
+.title_text.third {
+
+  background: $leftDarkPartBgColor;
+  color: $rightBrightPartBgColor;
+
+  padding: 1vw;
+
+  transform: rotate($titleRotate);
+}
+
+.title_text.fourth {
+  background: $rightBrightPartBgColor;
+
+  margin-top: $titleMarginBetweenText;
+  padding-left: .5vw;
+}
+
+%bgCloser {
+
+  position: absolute;
+
+  top: 0;
+  height: 100%;
+  background: inherit;
+  width: 100%;
+
+  animation: .75s ease-out anim_bg_closer__close;
+  animation-fill-mode: forwards;
+}
+
+.bg_closer__left {
+
+  @extend %bgCloser;
+  left: 0;
+}
+
+.bg_closer__right {
+
+  @extend %bgCloser;
+  right: 0;
+}
+
+.first .bg_closer__right, .first .bg_closer__left {
+  animation-delay: $animationBlurStart - 0.5s;
+}
+.second .bg_closer__right, .second .bg_closer__left {
+  animation-delay: $animationBlurStart + 0.25s;
+}
+.third .bg_closer__right, .third .bg_closer__left {
+  animation-delay: $animationBlurStart + 1s;
+}
+.fourth .bg_closer__right, .fourth .bg_closer__left {
+  animation-delay: $animationBlurStart + 1.75s;
+}
+
+@keyframes anim_bg_closer__close {
+  from {
     width: 100%;
-    height: 100%;
   }
-
-  .g1-stop1 {
-    stop-color: $leftDarkPartBgColor;
+  to {
+    width: 0;
   }
+}
 
-  .g1-stop2 {
-    stop-color: $rightBrightPartBgColor;
-  }
+@media all and (orientation: landscape) {
 
-  .g2-stop1 {
-    stop-color: $rightBrightPartBgColor;
-  }
-
-  .g2-stop2 {
-    stop-color: $leftDarkPartBgColor;
-  }
-
-
-  @mixin eyeEntry($bgColor) {
-    border-radius: 100%;
-
-    position: absolute;
-    top: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: $bgColor;
-
-    transition: left 1s, top 1s, right 1s;
-
-    width: calc($eyeWidth / 4);
-    height: calc($eyeWidth / 4);
-    left: calc($eyeWidth * 1.45 / 2) - calc($eyeWidth / 10);
-
-    @media all and (orientation: landscape) {
-      width: calc($eyeWidthPC / 4);
-      height: calc($eyeWidthPC / 4);
-    }
-  }
-
-  @mixin eyeEntryDiv($bgColor) {
-    position: relative;
-    background: $leftDarkPartBgColor;
-    border-radius: 100%;
-    background: $bgColor;
-    width: calc($eyeWidth / 8);
-    height: calc($eyeWidth / 8);
-
-    @media all and (orientation: landscape) {
-      width: calc($eyeWidthPC / 8);
-      height: calc($eyeWidthPC / 8);
-    }
-  }
-
-  .eye_entry {
-    @include eyeEntry($rightBrightPartBgColor);
-  }
-
-  .eye_entry_r {
-    @include eyeEntry($leftDarkPartBgColor);
-    left: auto;
-  }
-
-  .eye_entry div {
-    @include eyeEntryDiv($leftDarkPartBgColor);
-  }
-
-  .eye_entry_r div {
-    @include eyeEntryDiv($rightBrightPartBgColor);
-  }
-
-  .titleContainer {
-    display: flex;
-    flex-direction: row;
-    font-family: Undertale, serif;
-    font-size: $titleFontSize;
-
-    width: $titleWidth;
-
-    flex-grow: 1;
-    align-items: flex-end;
-  }
-
-  .titleContainer__column {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: 50vw;
-
-    align-items: center;
-    margin-bottom: $titleMarginBottom;
-  }
-
-  .titleText {
-    position: relative;
-  }
-
-  .titleText.first {
-
-    background: $leftDarkPartBgColor;
-    color: $rightBrightPartBgColor;
-
-    padding-left: .5vw;
-  }
-
-  .titleText.second {
-
-    background: $rightBrightPartBgColor;
-    color: $leftDarkPartBgColor;
-
-    margin-top: $titleMarginBetweenText;
-    padding: 1vw;
-
-    transform: rotate($titleRotate);
-  }
-
-  .titleText.third {
-
-    background: $leftDarkPartBgColor;
-    color: $rightBrightPartBgColor;
-
-    padding: 1vw;
-
-    transform: rotate($titleRotate);
-  }
-
-  .titleText.fourth {
-    background: $rightBrightPartBgColor;
-
-    margin-top: $titleMarginBetweenText;
-    padding-left: .5vw;
-  }
-
-  %bgCloser {
-
-    position: absolute;
-
-    top: 0;
-    height: 100%;
-    background: inherit;
-    width: 100%;
-
-    animation: .75s ease-out bgCloserAnimClose;
-    animation-fill-mode: forwards;
-  }
-
-  .bg_closer__left {
-
-    @extend %bgCloser;
-    left: 0;
-  }
-
-  .bg_closer__right {
-
-    @extend %bgCloser;
-    right: 0;
-  }
-
-  .first .bg_closer__right, .first .bg_closer__left {
-    animation-delay: $animationBlurStart - 0.5s;
-  }
-  .second .bg_closer__right, .second .bg_closer__left {
-    animation-delay: $animationBlurStart + 0.25s;
-  }
-  .third .bg_closer__right, .third .bg_closer__left {
-    animation-delay: $animationBlurStart + 1s;
-  }
-  .fourth .bg_closer__right, .fourth .bg_closer__left {
-    animation-delay: $animationBlurStart + 1.75s;
-  }
-
-  @keyframes bgCloserAnimClose {
-    from {
-      width: 100%;
-    }
-    to {
-      width: 0;
-    }
-  }
-
-  @media all and (orientation: landscape) {
-
-    .eye_svg {
-      margin-top: $eyeMarginTopPC;
-      width: 100vw;
-      height: $eyeWidthPC;
-    }
-
-    .eye_form {
-      stroke-width: $eyeBorderWidthPC;
-    }
-
-    .eye_entity {
-      position: absolute;
-      width: calc($eyeWidthPC * 1.45);
-      height: $eyeWidthPC;
-      margin-top: $eyeMarginTopPC;
-      display: flex;
-      z-index: 3;
-    }
-
-    .titleContainer {
-      font-size: $titleFontSizePC;
-      margin-bottom: $titleMarginBottomPC;
-      width: $titleWidthPC;
-    }
+  .title_container {
+    font-size: $titleFontSizePC;
+    margin-bottom: $titleMarginBottomPC;
+    width: $titleWidthPC;
   }
 }

@@ -20,7 +20,7 @@ $rowMarginBottom: getTrueVH(2);
 $iconCircleSizePC: getTrueVH(50);
 $iconCircleSize: 80vw;
 
-.SecondScreen {
+.second_screen {
   background: $bgColor;
   height: getTrueVH(100);
   width: 100vw;
@@ -37,14 +37,14 @@ $iconCircleSize: 80vw;
     height: $movingTitleMarginTop;
   }
 
-  .row {
+  .skill_list__container {
     display: flex;
     height: $bottomRowHeightPC;
     margin-bottom: $rowMarginBottom;
     z-index: 2;
   }
 
-  @keyframes logoListSpin {
+  @keyframes anim_logo_list__spin {
     0% {
       transform: rotate(0deg);
     }
@@ -52,7 +52,7 @@ $iconCircleSize: 80vw;
       transform: rotate(360deg);
     }
   }
-  @keyframes logoItemSpin {
+  @keyframes anim_logo_item__spin {
     0% {
       transform: rotate(0deg);
     }
@@ -73,7 +73,7 @@ $iconCircleSize: 80vw;
     height: $iconCircleSizePC;
     position: relative;
 
-    animation: logoListSpin linear 7.5s infinite;
+    animation: anim_logo_list__spin linear 7.5s infinite;
   }
 
   .logo_container img {
@@ -81,7 +81,7 @@ $iconCircleSize: 80vw;
     height: calc($iconCircleSizePC / 6);
     position: absolute;
 
-    animation: logoItemSpin linear 7.5s infinite;
+    animation: anim_logo_item__spin linear 7.5s infinite;
   }
 
   @mixin coordinates($x, $y) {
@@ -136,7 +136,7 @@ $iconCircleSize: 80vw;
     cursor: pointer;
   }
 
-  .SkillList {
+  .skill_list {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -160,7 +160,7 @@ $iconCircleSize: 80vw;
 
   @media all and (orientation: portrait) {
 
-    .SkillList {
+    .skill_list {
       padding: 0;
       justify-content: space-around;
     }
@@ -171,9 +171,8 @@ $iconCircleSize: 80vw;
       margin-bottom: $textMarginTop;
     }
 
-    .row {
+    .skill_list__container {
       height: getTrueVH(80);
-      //border-top: 2px black solid;
     }
 
     .logo_container__body {

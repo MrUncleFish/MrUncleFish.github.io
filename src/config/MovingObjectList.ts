@@ -58,7 +58,7 @@ export const MOVING_OBJECT_LIST: MovingObjectEntity[] = [{
     positionY: 18,
     moveSpeedX: MovingObject.MOVE_SPEED,
     moveSpeedY: MovingObject.MOVE_SPEED,
-    title: 'Psycho',
+    title: 'Psychology',
     desc: 'Подсел на эту тему уже давно, просто нравится следить за контентом некоторых психологов, читать интересные мысли'
 },{
     id: 6,

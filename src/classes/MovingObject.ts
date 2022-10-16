@@ -39,7 +39,7 @@ export default class MovingObject {
         moveSpeedY: 0,
     }
 
-    static getMove(curPos: MovingObjectEntity): MovingObjectEntity {
+    static getMove = (curPos: MovingObjectEntity): MovingObjectEntity => {
 
         let newPos = curPos;
 
@@ -56,7 +56,7 @@ export default class MovingObject {
             return item;
         }))
 
-    static checkCollisions(curPos: MovingObjectEntity, curPosList: MovingObjectEntity[]): MovingObjectEntity {
+    static checkCollisions = (curPos: MovingObjectEntity, curPosList: MovingObjectEntity[]): MovingObjectEntity => {
 
         let newPos = curPos;
 
@@ -89,7 +89,7 @@ export default class MovingObject {
     // основная большая координата линии
     // основная меньшая координата квадрата
     // основная большая координата квадрата
-    private static checkLineAndSquareForCollision (sLine:number, mMinLine:number, mMaxLine:number, sMinSquare:number, sMaxSquare:number, mMinSquare:number, mMaxSquare:number): boolean {
+    private static checkLineAndSquareForCollision = (sLine:number, mMinLine:number, mMaxLine:number, sMinSquare:number, sMaxSquare:number, mMinSquare:number, mMaxSquare:number): boolean => {
 
         if (this.checkBetween(sLine, sMinSquare, sMaxSquare)) {
             if (this.checkBetween(mMinLine, mMinSquare, mMaxSquare)) return true;
@@ -103,9 +103,8 @@ export default class MovingObject {
 
     private static checkBetween = (val:number, from:number, to:number): boolean => (val >= from && val <= to);
 
-    private static checkRightBody = (object: MovingObjectEntity, item: MovingObjectEntity) : boolean => {
-
-        return this.checkLineAndSquareForCollision(
+    private static checkRightBody = (object: MovingObjectEntity, item: MovingObjectEntity) : boolean =>
+        this.checkLineAndSquareForCollision(
             object.positionX + object.width,
             object.positionY,
             object.positionY + object.height,
@@ -113,11 +112,9 @@ export default class MovingObject {
             item.positionX + item.width,
             item.positionY,
             item.positionY + item.height);
-    }
 
-    private static checkLeftBody = (object: MovingObjectEntity, item: MovingObjectEntity) : boolean => {
-
-        return this.checkLineAndSquareForCollision(
+    private static checkLeftBody = (object: MovingObjectEntity, item: MovingObjectEntity) : boolean =>
+        this.checkLineAndSquareForCollision(
             object.positionX,
             object.positionY,
             object.positionY + object.height,
@@ -125,11 +122,10 @@ export default class MovingObject {
             item.positionX + item.width,
             item.positionY,
             item.positionY + item.height);
-    }
 
-    private static checkTopBody = (object: MovingObjectEntity, item: MovingObjectEntity) : boolean => {
 
-        return this.checkLineAndSquareForCollision(
+    private static checkTopBody = (object: MovingObjectEntity, item: MovingObjectEntity) : boolean =>
+        this.checkLineAndSquareForCollision(
             object.positionY + object.height,
             object.positionX,
             object.positionX + object.width,
@@ -137,11 +133,10 @@ export default class MovingObject {
             item.positionY + item.height,
             item.positionX,
             item.positionX + item.width);
-    }
 
-    private static checkBottomBody = (object: MovingObjectEntity, item: MovingObjectEntity) : boolean => {
 
-        return this.checkLineAndSquareForCollision(
+    private static checkBottomBody = (object: MovingObjectEntity, item: MovingObjectEntity) : boolean =>
+        this.checkLineAndSquareForCollision(
             object.positionY,
             object.positionX,
             object.positionX + object.width,
@@ -149,7 +144,6 @@ export default class MovingObject {
             item.positionY + item.height,
             item.positionX,
             item.positionX + item.width);
-    }
 }
 
 export interface MovingObjectEntity {
